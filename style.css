@@ -7,13 +7,45 @@ body {
 	height: 100%;
 }
 
-.welcome_holder  {
-	width: 100%;
+.welcome_holder {
+	position: relative;
+	background: #00a5ce;
+	border: solid #9c9dad;
+    border-width: 0px 0px 1px 0px;
+	margin-bottom: 32px;
 	height: 425px;
-	background-image: url("header-background.png");
-    background-size:100% 100%;
-    background-repeat: no-repeat;
+    z-index: -5;
+	
+	width: 100%;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.welcome_holder:after, .welcome_holder:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.welcome_holder:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #00a5ce;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.welcome_holder:before {
+	border-color: rgba(156, 157, 173, 0);
+	border-top-color: #9c9dad;
+	border-width: 31px;
+	margin-left: -31px;
+}
+
+#bubbles {
+	position: absolute;
+	width: 1800px;
+	height: 425px;
 }
 
 .welcome_text {
