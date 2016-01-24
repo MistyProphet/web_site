@@ -259,7 +259,7 @@ body {
 	margin-bottom: 32px;
 	top: -32px;
     z-index: -5;
-	height: 310px;
+	height: 620px;
 }
 .info:after, .info:before {
 	top: 100%;
@@ -284,6 +284,13 @@ body {
 	margin-left: -31px;
 }
 
+.input_container {
+    z-index: 60;
+	margin-top: -620px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 .row-centered {
     text-align:center;
 }
@@ -293,4 +300,79 @@ body {
     /* reset the text-align */
     text-align:center;
 	margin-left: 6.3%;
+}
+
+.color_holder {
+	width: 200px;
+	height: 70px;
+	background: white;
+	float: right;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+
+.color_label {
+	color: white;
+	font-size: 25px;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-weight: 100;
+	padding-top: 16px;
+}
+.color {
+	background: red;
+	width: 31px;
+	height: 30px;
+	margin: 2px 1px 1px 1px;
+	float: left;
+}
+.color1{
+	background: red;
+}
+.color2{
+	background: magenta;
+}
+.color3{
+	background: #9900cc;
+}
+.color4{
+	background: blue;
+}
+.color5{
+	background: cyan;
+}
+.color6{
+	background: #595959;
+}
+.color7{
+	background: lime;
+}
+.color8{
+	background: yellow;
+}
+.color9{
+	background: orange;
+}
+.color10{
+	background: white;
+}
+.color11{
+	background: black;
+}
+.color12{
+	background: #cccccc;
+}
+
+.btn-custom {
+	width: 100%;
+	height: 70px;
+	background: white;
+	padding-top: 30px;
+	margin-top: 40px;
+}
+.btn_text {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 40px;
+	color: #666666;
+	margin-top: 30px;
 }
