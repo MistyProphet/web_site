@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="sr-Latn">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8"> 
 	<title>Wash.rs</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div class="sections">
+	<!--
 	<img id="bubbles" src="bubbles.png" />
+	-->
 	<div class="welcome_holder"><span>
 		<div class="welcome_holder_up"><span>
 			<div class="logo"><span></span></div>
-			<div class="menu"><span>
-				<div class="menu_item"><span>KONTAKT</span></div>
-				<div class="menu_item"><span>POSLOVI</span></div>
-				<div class="menu_item"><span>ZA FIRME</span></div>
-				<div class="menu_item"><span>BLOG</span></div>
-				<div class="menu_item"><span>CENE</span></div>
-				<div class="menu_item"><span>NARU&Ccaron;I</span></div>
-			</span></div>
+			<nav class="navbar navbar-custom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>                        
+						</button>
+					</div>
+					<div class="navbar-collapse collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"  class="menu_item"><span class="glyphicon glyphicon-log-in"></span> NARU&Ccaron;I</a></li>
+							<li><a href="#" class="menu_item"><span class="glyphicon glyphicon-log-in"></span> CENE</a></li>
+							<li><a href="#" class="menu_item"><span class="glyphicon glyphicon-log-in"></span> BLOG</a></li>
+							<li><a href="#" class="menu_item"><span class="glyphicon glyphicon-log-in"></span> ZA FIRME</a></li>
+							<li><a href="#" class="menu_item"><span class="glyphicon glyphicon-log-in"></span> POSLOVI</a></li>
+							<li><a href="#" class="menu_item"><span class="glyphicon glyphicon-user"></span> KONTAKT</a></li>
+					    </ul>
+					</div>
+				</div>
+			</nav>
 		</span></div>
 		<div class="welcome_text"><span>
 			<p id="welcome_title">DOBRODO&Scaron;LI U WASH.RS!</p>
@@ -30,18 +50,34 @@
 		<div class="wash"><span>2.1</span></div>
 		<div class="wash" id="time"><span>U roku od</span><br/>
 			<img id="clock" src="clock.png" /><br/>
-			<div id="time_button_wrapper">
-				<div class="time_button">30 minuta</div>
-				<div class="time_button">3 sata</div>
-				<div class="time_button">Ovih dana</div>
+			<div class="container">
+				<div class="row row-centered">
+					<div class="col-xs-3 col-centered">
+						<div class="time_button">30 minuta</div>
+					</div>
+					<div class="col-xs-3 col-centered">
+						<div class="time_button">3 sata</div>
+					</div>
+					<div class="col-xs-3 col-centered">
+						<div class="time_button">Ovih dana</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="wash" id="pay"><span>I platim</span><br/>
 			<img id="number" src="number.png" /><br/>
-			<div id="pay_button_wrapper">
-				<div class="pay_button">Ke&scaron;</div>
-				<div class="pay_button">Kartica</div>
-				<div class="pay_button">Online</div>
+			<div class="container">
+				<div class="row row-centered">
+					<div class="col-xs-3 col-centered">
+						<div class="pay_button">Ke&scaron;</div>
+					</div>
+					<div class="col-xs-3 col-centered">
+						<div class="pay_button">Kartica</div>
+					</div>
+					<div class="col-xs-3 col-centered">
+						<div class="pay_button">Online</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</span></div>

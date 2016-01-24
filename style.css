@@ -14,7 +14,6 @@ body {
     border-width: 0px 0px 1px 0px;
 	margin-bottom: 32px;
 	height: 425px;
-    z-index: -5;
 	width: 100%;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
@@ -49,22 +48,22 @@ body {
 
 .offer {
 	position: absolute;
-	right: 165px;
-	top: 375px;
+	right: 9%;
+	top: 35%;
     z-index: 15;
 	color: #fff;
 	background: #b7b900;
 	width: 350px;
-	height: 110px;
+	height: 130px;
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 3px;
 	font-size: 28px;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	letter-spacing: 1.5px;
 	overflow: hidden;
-	-ms-transform: rotate(6deg); /* IE 9 */
-    -webkit-transform: rotate(6deg); /* Safari */
-    transform: rotate(6deg); /* Standard syntax */
+	-ms-transform: rotate(4deg); /* IE 9 */
+    -webkit-transform: rotate(4deg); /* Safari */
+    transform: rotate(4deg); /* Standard syntax */
 }
 
 .offer:before {
@@ -95,12 +94,12 @@ body {
 }
 
 #welcome_title {
-	font-size: 68px;
+	font-size: 72px;
 	font-weight: 100;
-	margin-top: 40px;
+	margin-top: 80px;
 }
 #welcome_title_text {
-	margin-top: -20px;
+	margin-top: 40px;
 }
 
 .logo {
@@ -114,20 +113,41 @@ body {
 	margin-top: 45px;
 }
 
-.menu {
-	height: 60px;
-	width: calc(100% - 465px);
-	margin-left:420px;
-	margin-right: 45px;
-	padding-top: 45px;
-	text-align: right;
-}
 .menu_item {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 19px;
+	font-size: 18px;
 	float: right;
-	margin: 0px 30px 0px 30px;
+	margin: 0px 20px 0px 20px;
 	color: white;
+}
+
+.navbar {
+	background-color: transparent;
+	background: transparent;
+	border-color: transparent;
+	min-height: 120px;
+	margin-right: 45px;
+	padding-top: 35px;
+	text-align: right;
+}
+.navbar-custom .navbar-toggle {
+    border-color: white;
+	border-width: 1px;
+    width: 44px;
+    height: 38px;
+}
+.navbar-toggle, .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: white;
+	border-width: 5px;
+	border-color: white;
+}
+
+.wash_holder {
+    width:100%;
 }
 
 .wash {
@@ -185,18 +205,17 @@ body {
 }
 .time_button, .pay_button {
 	border: 1px solid #a1a1a1;
-    padding-top: 30px; 
+    padding-top: 10px; 
 	padding-left: 30px;
 	padding-right: 30px;
     background: #fff;
-    width: 200px;
+    min-width: 200px;
     height: 70px;
     border-radius: 40px;
 	font-size: 34px;
 	display:inline-block;
     text-align:center;
-	margin-left: 100px;
-	margin-right: 100px;
+	vertical-align:middle;
 }
 
 .info {
@@ -230,4 +249,15 @@ body {
 	border-top-color: #ffe0fb;
 	border-width: 31px;
 	margin-left: -31px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+	margin-left: 6.3%;
 }
