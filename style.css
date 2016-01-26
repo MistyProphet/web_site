@@ -229,6 +229,7 @@ body {
 }
 #clock, #number {
 	margin-top: 10px;
+    margin-bottom: 10px;
 }
 #time_button_wrapper , #pay_button_wrapper{
     width: 100%;
