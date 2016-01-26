@@ -301,6 +301,9 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+.input_container input {
+    height:55px;
+}
 
 .row-centered {
     text-align:center;
@@ -379,11 +382,11 @@ body {
 	height: 70px;
 	background: white;
 	padding-top: 30px;
-	margin-top: 40px;
+    margin-top: 20px;
 }
 .btn_text {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	font-size: 40px;
 	color: #666666;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
