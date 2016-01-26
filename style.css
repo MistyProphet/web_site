@@ -247,10 +247,20 @@ body {
     height: 70px;
     border-radius: 40px;
 	font-size: 34px;
+	font-weight: 100;
 	display:inline-block;
     text-align:center;
 	vertical-align:middle;
 	overflow: hidden;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+input[type=radio]:checked+label div {
+	background: #eb1484;
+	color: #ffffff;
 }
 
 .time_button:hover, .pay_button:hover {
