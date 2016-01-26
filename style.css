@@ -301,7 +301,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-.input_container input {
+.input_container input, .input_container #city {
     height:55px;
 }
 
