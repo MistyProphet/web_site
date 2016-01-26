@@ -285,11 +285,15 @@ body {
 	margin-left: -31px;
 }
 
+.sharp {
+    /*Make the element have sharp edges.*/
+    border-radius: 0 !important;
+}
 .input_container {
     z-index: 60;
-	margin-top: -620px;
-	padding-left: 15px;
-	padding-right: 15px;
+    margin-top: -620px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .row-centered {
