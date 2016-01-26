@@ -252,6 +252,11 @@ body {
 	overflow: hidden;
 }
 
+.time_button:hover, .pay_button:hover {
+	background: #eb1484;
+    color: #ffffff;
+}
+
 .info {
 	position: relative;
 	background: #eb1484;
