@@ -12,8 +12,19 @@ $(document).ready(function() {
 
     // Reset the phone input placeholder on focus out
     // FIXME localization
+    // Set the background red if the phone isn't a match
+    phone_regex = /^06[0-9]{6,9}$/
     $("#phone").focusout(function() {
         $("#phone").attr("placeholder", "Broj telefona");
+
+        var phone = $("#phone").val();
+        if (phone != "") {
+            var match = phone.search(phone_regex);
+            if (match == -1)
+                $("#phone").css({'background-color': "#ff9999"})
+            else
+                $("#phone").css({'background-color': "white"})
+        }
     });
 
     // Set the registration input placeholder on click
