@@ -5,6 +5,8 @@
 
 $(document).ready(function() {
 
+    var ERROR_BACKGROUND_COLOR = "#ff9999";
+
     // Set the phone input placeholder on click
     $("#phone").focusin(function() {
         $("#phone").attr("placeholder", "06XXXXXXXX");
@@ -21,7 +23,7 @@ $(document).ready(function() {
         if (phone != "") {
             var match = phone.search(phone_regex);
             if (match == -1)
-                $("#phone").css({'background-color': "#ff9999"})
+                $("#phone").css({'background-color': ERROR_BACKGROUND_COLOR})
             else
                 $("#phone").css({'background-color': "white"})
         }
@@ -42,7 +44,7 @@ $(document).ready(function() {
         if (licence != "") {
             var match = licence.search(licence_regex);
             if (match == -1)
-                $("#plates").css({'background-color': '#ff9999'});
+                $("#plates").css({'background-color': ERROR_BACKGROUND_COLOR});
             else
                 $("#plates").css({'background-color': 'white'});
         }
