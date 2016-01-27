@@ -50,4 +50,22 @@ $(document).ready(function() {
         }
     });
 
+
+    // Text
+    // Text filler for the time buttons
+    $("#time-radio1").click(function() {
+        $("#time-fill").text("pola sata");});
+    $("#time-radio2").click(function() {
+        $("#time-fill").text("tri sata");});
+    $("#time-radio3").click(function() {
+        $("#time-fill").text("par dana");});
+
+    // Text filler for the payment buttons
+    $("#pay-radio1").click(function() {
+        $("#pay-fill").text("kešom");});
+    $("#pay-radio2").click(function() {
+        $("#pay-fill").text("karticom");});
+    $("#pay-radio3").click(function() {
+        $("#pay-fill").text("preko interneta");});
+
 });
