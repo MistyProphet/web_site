@@ -104,12 +104,14 @@ body {
 
 .logo {
 	background-image: url("logo.png");
-    background-size:100% 100%;
+    background-size: contain;
     background-repeat: no-repeat;
 	min-height: 60px;
-	min-width: 260px;
+	width: 65vw;
+	max-width: 260px;
 	float: left;
-	margin-left: 60px;
+	margin-left: 3vw;
+	margin-top: 8px;
 }
 
 .menu_item {
@@ -117,6 +119,7 @@ body {
 	font-size: 18px;
 	margin: 0px 20px 0px 20px;
 	color: white;
+	margin-top: 20px;
 }
 
 .navbar {
@@ -136,7 +139,7 @@ body {
     width: 60px;
     height: 60px;
 	top: 31px;
-	right: 30px;
+	right: -10px;
 	position: absolute;
 	
 }
