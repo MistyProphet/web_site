@@ -31,19 +31,23 @@ function fillInAddress() {
     // TODO 1: Validate that the street number exists
     // TODO 2: Check the selected city
     // Get the place details from the autocomplete object.
-    //var place = autocomplete.getPlace();
-    //
-    //document.getElementById('street').value = place.address_components['route']
-    //
-    //// Get each component of the address from the place details
-    //// and fill the corresponding field on the form.
-    //console.log(place.address_components)
-    //for (var i = 0; i < place.address_components.length; i++) {
-    //    var addressType = place.address_components[i].types[0];
-    //    if (addressType == 'route') {
-    //        var val = place.address_components[i].long_name;
-    //        document.getElementById('street').value = val;
-    //    }
-    //}
+    var place = autocomplete.getPlace();
+
+    document.getElementById('street').value = place.address_components['route']
+
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    console.log(place.address_components)
+    for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (addressType == 'route') {
+            var val = place.address_components[i].long_name;
+            document.getElementById('street').value = val;
+        }
+        if (addressType == 'street_number') {
+            var val = place.address_components[i].long_name;
+            document.getElementById('street_number').value = val;
+        }
+    }
 }
 
