@@ -52,6 +52,14 @@ $(document).ready(function() {
 
 
     // Text
+    // Text filler for the type buttons
+    $("#type-radio1").click(function() {
+        $("#type-fill").text("motor");});
+    $("#type-radio2").click(function() {
+        $("#type-fill").text("auto");});
+    $("#type-radio3").click(function() {
+        $("#type-fill").text("kamion");});
+		
     // Text filler for the time buttons
     $("#time-radio1").click(function() {
         $("#time-fill").text("pola sata");});
