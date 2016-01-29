@@ -9,13 +9,13 @@ $(document).ready(function() {
 
     // Sliding down the new options on click
     $("#type label").click(function() {
-        $("#time").slideToggle("slow", function() {});
+        $("#time").slideDown("slow", function() {});
     });
     $("#time label").click(function() {
-        $("#pay").slideToggle("slow", function() {});
+        $("#pay").slideDown("slow", function() {});
     });
     $("#pay label").click(function() {
-        $("#inputs").slideToggle("slow", function() {});
+        $("#inputs").slideDown("slow", function() {});
     });
 
 
