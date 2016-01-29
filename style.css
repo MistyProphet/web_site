@@ -270,6 +270,10 @@ body {
     height: 20vw;
 }
 
+.type_button:hover .type_button_stroke {
+	stroke: #fff;
+}
+
 .time_button, .pay_button {
 	border: 1px solid #a1a1a1;
 	padding-left: 10%;
@@ -296,6 +300,9 @@ input[type=radio] {
 input[type=radio]:checked+label div {
 	background: #eb1484;
 	color: #ffffff;
+}
+input[type=radio]:checked+label div svg path{
+	stroke: #fff;
 }
 
 .time_button:hover, .pay_button:hover, .type_button:hover {
