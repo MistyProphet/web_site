@@ -61,7 +61,7 @@
 			<div class="container">
 				<div class="row row-centered">
 					<input type="radio" id="type-radio1" name="type-radio"/>
-					<label for="type-radio1" class="col-xs-4 col-md-4">
+					<label for="type-radio1" class="col-xs-4 col-md-4 vehicle-button">
 						<div class="type_button">
 							<div class="type_text">Motor</div>
 							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -96,7 +96,7 @@
 						</div>
 					</label>
 					<input type="radio" id="type-radio2" name="type-radio"/>
-					<label for="type-radio2" class="col-xs-4 col-md-4">
+					<label for="type-radio2" class="col-xs-4 col-md-4 vehicle-button">
 						<div class="type_button">
 							<div class="type_text">Auto</div>
 							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -126,7 +126,7 @@
 						</div>
 					</label>
 					<input type="radio" id="type-radio3" name="type-radio"/>
-					<label for="type-radio3" class="col-xs-4 col-md-4">
+					<label for="type-radio3" class="col-xs-4 col-md-4 vehicle-button">
 						<div class="type_button">
 							<div class="type_text">Kamion</div>
 							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -161,7 +161,7 @@
 		</div>
 
 		<!-- Order time buttons -->
-		<div class="wash" id="time"><span>U roku od <span class="label-filler" id="time-fill"></span></span><br/>
+		<div hidden class="wash" id="time"><span>U roku od <span class="label-filler" id="time-fill"></span></span><br/>
 			<img id="clock" src="clock.png" /><br/>
 			<div class="container">
 				<div class="row row-centered">
@@ -182,7 +182,7 @@
 		</div>
 
         <!-- Payment radio buttons -->
-		<div class="wash" id="pay"><span>I platim <span class="label-filler" id="pay-fill"></span></span><br/>
+		<div hidden class="wash" id="pay"><span>I platim <span class="label-filler" id="pay-fill"></span></span><br/>
 			<img id="number" src="number.png" /><br/>
 			<div class="container">
 				<div class="row row-centered">
@@ -209,7 +209,7 @@
 	</span></div>
     
     <!-- Inputs -->
-	<div class="input_container">
+	<div hidden class="input_container" id="inputs">
 		<div class="container">
 			<form class="form-horizontal">
 

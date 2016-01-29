@@ -7,6 +7,19 @@ $(document).ready(function() {
 
     var ERROR_BACKGROUND_COLOR = "#ff9999";
 
+    // Sliding down the new options on click
+    $("#type label").click(function() {
+        $("#time").slideToggle("slow", function() {});
+    });
+    $("#time label").click(function() {
+        $("#pay").slideToggle("slow", function() {});
+    });
+    $("#pay label").click(function() {
+        $("#inputs").slideToggle("slow", function() {});
+    });
+
+
+
     // Set the phone input placeholder on click
     $("#phone").focusin(function() {
         $("#phone").attr("placeholder", "06XXXXXXXX");
