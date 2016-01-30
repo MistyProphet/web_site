@@ -11,7 +11,7 @@ $(document).ready(function() {
     $("#type label").click(function() {
         $("#time").slideDown("slow", function() {
 			$('html, body').animate({
-				scrollTop: $("#time").offset().top
+				scrollTop: $("#time").offset().top - ($("#time").height())
 			}, 2000);
 			$("#receipt_holder").slideDown("slow", function() {
 			});
@@ -22,15 +22,15 @@ $(document).ready(function() {
     $("#time label").click(function() {
         $("#pay").slideDown("slow", function() {
 			$('html, body').animate({
-				scrollTop: $("#pay").offset().top
+				scrollTop: $("#pay").offset().top - ($("#pay").height())
 			}, 2000);
 		});
     });
     $("#pay label").click(function() {
-		document.getElementById("info_back").style.visibility = "visible";
         $("#inputs").slideDown("slow", function() {
+			document.getElementById("info_back").style.visibility = "visible";
 			$('html, body').animate({
-				scrollTop: $("#inputs").offset().top
+				scrollTop: $("#inputs").offset().top - ($("#pay").height())
 			}, 2000);
 		});
     });
