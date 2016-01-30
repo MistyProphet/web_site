@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="order.js"></script>
 	<script src="autocomplete.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_cQAh5FAvArzdC08hvcK0Jzpw5Cpan4w&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
@@ -52,7 +51,7 @@
 		</span></div>
 	</span></div>
 
-	<div class="offer"><span>&Zcaron;elite pranje kola za<br/><b>400 RSD</b>, u roku od<br/>30 min  <span id="price">+150 RSD</span></span></div>
+	<div class="offer"><span>&Zcaron;elite pranje vozila<br/>u roku od <b>30 min</b><span style="font-family: 'Times New Roman"' Georgia, Serif;">?</span><br/><span id="price">+150 RSD</span></span></div>
 
 	<div class="wash_holder"><span>
 		
@@ -205,106 +204,141 @@
 
 	<div class="info_holder"><span>
 		<div class="info"><span>
+			<div class="info_back" id="info_back"><span></span></div>
+			<!-- Inputs -->
+			<div hidden class="input_container" id="inputs">
+				<div class="container">
+					<form class="form-horizontal">
+
+						<!-- Registration input -->
+						<div class="form-group">
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<input type="text" class="form-control input-lg sharp" id="plates" placeholder="Registracija">
+								</div>
+							</div>
+						</div>
+
+						<!-- Color picker menu -->
+						<div class="form-group form-inline">
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<div class="color_label">
+										<label class="color_label_text" for="color_holder" >Boja vozila</label>
+									</div>
+									<div class="color_holder" id="color_holder">
+										<input type="radio" id="color-radio1" name="color-radio"/>
+										<label for="color-radio1">
+											<div class="color color1"></div>
+										</label>
+										<input type="radio" id="color-radio2" name="color-radio"/>
+										<label for="color-radio2">
+											<div class="color color2"></div>
+										</label>
+										<input type="radio" id="color-radio3" name="color-radio"/>
+										<label for="color-radio3">
+											<div class="color color3"></div>
+										</label>
+										<input type="radio" id="color-radio4" name="color-radio"/>
+										<label for="color-radio4">
+											<div class="color color4"></div>
+										</label>
+										<input type="radio" id="color-radio5" name="color-radio"/>
+										<label for="color-radio5">
+											<div class="color color5"></div>
+										</label>
+										<input type="radio" id="color-radio6" name="color-radio"/>
+										<label for="color-radio6">
+											<div class="color color6"></div>
+										</label>
+										<input type="radio" id="color-radio7" name="color-radio"/>
+										<label for="color-radio7">
+											<div class="color color7"></div>
+										</label>
+										<input type="radio" id="color-radio8" name="color-radio"/>
+										<label for="color-radio8">
+											<div class="color color8"></div>
+										</label>
+										<input type="radio" id="color-radio9" name="color-radio"/>
+										<label for="color-radio9">
+											<div class="color color9"></div>
+										</label>
+										<input type="radio" id="color-radio10" name="color-radio"/>
+										<label for="color-radio10">
+											<div class="color color10"></div>
+										</label>
+										<input type="radio" id="color-radio11" name="color-radio"/>
+										<label for="color-radio11">
+											<div class="color color11"></div>
+										</label>
+										<input type="radio" id="color-radio12" name="color-radio"/>
+										<label for="color-radio12">
+											<div class="color color12"></div>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Telephone number input -->
+						<div class="form-group">
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<input type="text" class="form-control input-lg sharp" id="phone" placeholder="Broj telefona">
+								</div>
+							</div>
+						</div>
+
+						<!-- City input -->
+						<div class="form-group">
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<select class="form-control input-lg sharp" id="city">
+										<option value="" selected disabled>Grad</option>
+										<option>Novi Sad</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Street name input -->
+						<div class="form-group">
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<input type="text" class="form-control input-lg sharp" id="street" placeholder="Ulica">
+								</div>
+							</div>
+						</div>
+
+						<!-- Apartment number input -->
+						<div class="form-group">
+							<div class="row row-centered">
+								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-4">
+									<input type="text" class="form-control input-lg sharp" id="street_number" placeholder="Broj zgrade">
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<input type="text" class="form-control input-lg sharp" id="app_num" placeholder="Broj stana">
+								</div>
+							</div>
+						</div>
+
+						<!-- Order button -->
+						<div class="form-group">        
+							<div class="row row-centered">
+								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+									<div>
+										<a href="#" class="btn btn-lg btn-custom sharp">
+											<span class="btn_text">Naru&ccaron;i</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+				  </form>
+				</div>
+			</div>
 		</span></div>
 	</span></div>
-    
-    <!-- Inputs -->
-	<div hidden class="input_container" id="inputs">
-		<div class="container">
-			<form class="form-horizontal">
-
-				<!-- Registration input -->
-				<div class="form-group">
-					<div class="row row-centered">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<input type="text" class="form-control input-lg sharp" id="plates" placeholder="Registracija">
-						</div>
-					</div>
-				</div>
-
-				<!-- Color picker menu -->
-				<div class="form-group form-inline">
-					<div class="row row-centered">
-						<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<label for="color_holder" class="color_label">Boja vozila</label>
-							<div class="color_holder" id="color_holder">
-								<div class="color color1"></div>
-								<div class="color color2"></div>
-								<div class="color color3"></div>
-								<div class="color color4"></div>
-								<div class="color color5"></div>
-								<div class="color color6"></div>
-								<div class="color color7"></div>
-								<div class="color color8"></div>
-								<div class="color color9"></div>
-								<div class="color color10"></div>
-								<div class="color color11"></div>
-								<div class="color color12"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-                <!-- Telephone number input -->
-				<div class="form-group">
-					<div class="row row-centered">
-						<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<input type="text" class="form-control input-lg sharp" id="phone" placeholder="Broj telefona">
-						</div>
-					</div>
-				</div>
-
-                <!-- City input -->
-				<div class="form-group">
-					<div class="row row-centered">
-						<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<select class="form-control input-lg sharp" id="city">
-								<option value="" selected disabled>Grad</option>
-								<option>Novi Sad</option>
-								<option>Beograd</option>
-								<option>Subotica</option>
-								<option>Valjevo</option>
-							</select>
-						</div>
-					</div>
-				</div>
-                
-                <!-- Street name input -->
-				<div class="form-group">
-					<div class="row row-centered">
-						<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<input type="text" class="form-control input-lg sharp" id="street" placeholder="Ulica">
-						</div>
-					</div>
-				</div>
-
-                <!-- Apartment number input -->
-				<div class="form-group">
-					<div class="row row-centered">
-						<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-4">
-							<input type="text" class="form-control input-lg sharp" id="street_number" placeholder="Broj zgrade">
-						</div>
-						<div class="col-xs-6 col-sm-4 col-md-2">
-							<input type="text" class="form-control input-lg sharp" id="app_num" placeholder="Broj stana">
-						</div>
-					</div>
-				</div>
-
-                <!-- Order button -->
-				<div class="form-group">        
-					<div class="row row-centered">
-						<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-							<div>
-								<a href="#" class="btn btn-lg btn-custom sharp">
-									<span class="btn_text">Naru&ccaron;i</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-		  </form>
-		</div>
-	</div>
 </div>
 
 </body>

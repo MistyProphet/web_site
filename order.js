@@ -9,13 +9,26 @@ $(document).ready(function() {
 
     // Sliding down the new options on click
     $("#type label").click(function() {
-        $("#time").slideDown("slow", function() {});
+        $("#time").slideDown("slow", function() {
+			$('html, body').animate({
+				scrollTop: $("#time").offset().top
+			}, 1000);
+		});
     });
     $("#time label").click(function() {
-        $("#pay").slideDown("slow", function() {});
+        $("#pay").slideDown("slow", function() {
+			$('html, body').animate({
+				scrollTop: $("#pay").offset().top
+			}, 1000);
+		});
     });
     $("#pay label").click(function() {
-        $("#inputs").slideDown("slow", function() {});
+        $("#inputs").slideDown("slow", function() {
+			$('html, body').animate({
+				scrollTop: $("#inputs").offset().top
+			}, 1000);
+		});
+		document.getElementById("info_back").style.visibility = "visible";
     });
 
 
