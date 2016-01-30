@@ -498,3 +498,13 @@ input[type=radio]:checked+label div svg path{
 	color: #666666;
 	/*margin-top: 30px;*/
 }
+
+.receipt_holder {
+	width: 100%;
+	position: fixed;
+	top: 50%;
+	left: 65%;
+	z-index: 70;
+}
+.receipt {
+}

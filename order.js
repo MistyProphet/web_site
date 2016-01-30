@@ -12,21 +12,21 @@ $(document).ready(function() {
         $("#time").slideDown("slow", function() {
 			$('html, body').animate({
 				scrollTop: $("#time").offset().top
-			}, 1000);
+			}, 2000);
 		});
     });
     $("#time label").click(function() {
         $("#pay").slideDown("slow", function() {
 			$('html, body').animate({
 				scrollTop: $("#pay").offset().top
-			}, 1000);
+			}, 2000);
 		});
     });
     $("#pay label").click(function() {
         $("#inputs").slideDown("slow", function() {
 			$('html, body').animate({
 				scrollTop: $("#inputs").offset().top
-			}, 1000);
+			}, 2000);
 		});
 		document.getElementById("info_back").style.visibility = "visible";
     });
