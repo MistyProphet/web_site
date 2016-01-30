@@ -27,12 +27,12 @@ $(document).ready(function() {
 		});
     });
     $("#pay label").click(function() {
+		document.getElementById("info_back").style.visibility = "visible";
         $("#inputs").slideDown("slow", function() {
 			$('html, body').animate({
 				scrollTop: $("#inputs").offset().top
 			}, 2000);
 		});
-		document.getElementById("info_back").style.visibility = "visible";
     });
 
 
@@ -80,23 +80,62 @@ $(document).ready(function() {
         }
     });
 
-
+	var type = 0;
+	var time = 0;
+	var total = 0;
+	
     // Text
     // Text filler for the type buttons
     $("#type-radio1").click(function() {
-        $("#type-fill").text("motor");});
+        $("#type-fill").text("motor");
+        $("#type-fill_rc").text("motor");
+        $("#type-fill_rc_cost").text("300");
+		type = 300;
+		total = type + time;
+        $("#total_rc_cost").text(total.toString());
+		});
     $("#type-radio2").click(function() {
-        $("#type-fill").text("auto");});
+        $("#type-fill").text("auto");
+        $("#type-fill_rc").text("auto");
+        $("#type-fill_rc_cost").text("400");
+		type = 400;
+		total = type + time;
+        $("#total_rc_cost").text(total.toString());
+		});
     $("#type-radio3").click(function() {
-        $("#type-fill").text("kamion");});
+        $("#type-fill").text("kamion");
+        $("#type-fill_rc").text("kamion");
+        $("#type-fill_rc_cost").text("550");
+		type = 550;
+		total = type + time;
+        $("#total_rc_cost").text(total.toString());
+		});
 		
     // Text filler for the time buttons
     $("#time-radio1").click(function() {
-        $("#time-fill").text("pola sata");});
+        $("#time-fill").text("pola sata");
+        $("#time-fill_rc").text("pola sata");
+        $("#time-fill_rc_cost").text("150");
+		time = 150;
+		total = type + 150;
+        $("#total_rc_cost").text(total);
+		});
     $("#time-radio2").click(function() {
-        $("#time-fill").text("tri sata");});
+        $("#time-fill").text("tri sata");
+        $("#time-fill_rc").text("tri sata");
+        $("#time-fill_rc_cost").text("0");
+		time = 0;
+		total = type;
+        $("#total_rc_cost").text(total);
+		});
     $("#time-radio3").click(function() {
-        $("#time-fill").text("par dana");});
+        $("#time-fill").text("par dana");
+        $("#time-fill_rc").text("par dana");
+        $("#time-fill_rc_cost").text("0");
+		time = 0;
+		total = type;
+        $("#total_rc_cost").text(total);
+		});
 
     // Text filler for the payment buttons
     $("#pay-radio1").click(function() {
