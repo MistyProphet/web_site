@@ -516,7 +516,7 @@ input[type=radio]:checked+label div svg path{
 	width: 100%;
 	position: fixed;
 	top: 51vh;
-	right: -65%;
+	right: -70vw;
 	margin-top: -1vh;
 	z-index: 70;
 }
@@ -529,6 +529,10 @@ input[type=radio]:checked+label div svg path{
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+.receipt {
+	display: block;
+	width: 290px;
 }
 #rc_1 {
 	padding-left: 23px; 
