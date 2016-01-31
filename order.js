@@ -173,5 +173,11 @@ $(document).ready(function() {
 			$navbar.collapse('hide');
 		}
 	});
+	
+	
+	// Select input, da se selektovan grad ispise na dugmetu
+	$('.dropdown-menu a').on('click', function(){ 
+		$("#city_select").html($(this).html() + '<span class="caret"></span>'); 
+	});
 
 });

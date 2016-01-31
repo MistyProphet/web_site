@@ -414,7 +414,37 @@ input[type=radio]:checked+label div svg path{
     margin-bottom: 30px;
 }
 .input_container input, .input_container #city {
-    height:55px;
+    height: 55px;
+}
+.btn-lg {
+    cursor: default;
+    background-color: #FFF;
+    border-radius: 4px;
+    text-align: left;
+}
+#city_select {
+	height: 57px;
+}
+
+.caret {
+    position: absolute;
+    right: 16px;
+    top: 26px;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    background-color: #FFF;    
+}
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6)
+}
+
+.btn-group {
+	width: 100%;
+}
+.dropdown-menu {
+	width: 100%;
 }
 
 .row-centered {
