@@ -26,7 +26,7 @@ $(document).ready(function() {
 			}, 2000);
 		});
     });
-    $("#pay label").click(function() {
+    $("#pay #cash").click(function() {
         $("#inputs").slideDown("slow", function() {
 			document.getElementById("info_back").style.visibility = "visible";
 			$('html, body').animate({

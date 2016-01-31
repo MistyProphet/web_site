@@ -340,6 +340,11 @@ body {
 	margin-bottom: 3vw;
 }
 
+.disabled {
+	background: #d9d9d9;
+	color: #a1a1a1;
+}
+
 input[type=radio] {
 	display: none;
 }
@@ -362,7 +367,11 @@ input[type=radio]:checked+label div svg path{
 	stroke: #fff;
 }
 
-.time_button:hover, .pay_button:hover, .type_button:hover {
+.time_button:hover, .type_button:hover {
+	background: #eb1484;
+    color: #ffffff;
+}
+.enabled:hover {
 	background: #eb1484;
     color: #ffffff;
 }
