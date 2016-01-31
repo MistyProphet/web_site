@@ -182,15 +182,29 @@ body {
         display: none!important;
     }
     .navbar-custom .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
+        float: right!important;
+		clear: both;
+        margin-right: 7.5px -15px;
+		background-color: #ffffff;
+		width: auto;
+		border: 1px solid #a1a1a1;
     }
     .navbar-custom .navbar-nav>li {
         float: none;
+		color: #a1a1a1;
     }
     .navbar-custom .navbar-nav>li>a {
         padding-top: 10px;
         padding-bottom: 10px;
+		color: #a1a1a1;
+    }
+	
+    /* since 3.1.0 */
+    .navbar-custom .navbar-collapse.collapse.in { 
+        display: inline-block!important;
+    }
+    .navbar-custom .collapsing {
+        overflow: hidden!important;
     }
 }
 
@@ -323,7 +337,6 @@ body {
 input[type=radio] {
 	display: none;
 }
-
 input[type=radio]:checked+label .type_button {
 	background: #eb1484;
 	color: #ffffff;

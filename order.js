@@ -144,5 +144,16 @@ $(document).ready(function() {
         $("#pay-fill").text("karticom");});
     $("#pay-radio3").click(function() {
         $("#pay-fill").text("preko interneta");});
+		
+	
+	// Closing the exapnded navbar on click anywhere else on screen
+	$(document).click(function (event) {
+		var clickover = $(event.target);
+		var $navbar = $(".navbar-collapse");               
+		var _opened = $navbar.hasClass("in");
+		if (_opened === true && !clickover.hasClass("navbar-toggle")) {      
+			$navbar.collapse('hide');
+		}
+	});
 
 });
