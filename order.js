@@ -23,14 +23,14 @@ $(document).ready(function() {
 			}
 			else
 			{
-				$('#register').attr("disabled", true);
-				$('[data-toggle="popover"]').popover();
+				$('#register').attr('disabled', true);
+				$('#register').popover('enable')
 			}
 		}
 		else 
 		{
-			$('#register').attr("disabled", true);
-			$('[data-toggle="popover"]').popover();
+			$('#register').attr('disabled', true);
+				$('#register').popover('enable')
 		}
 	});
 	function allFilled() {
@@ -40,6 +40,36 @@ $(document).ready(function() {
 		});
 		return filled;
 	}
+	$( "input[name='color-radio']" ).on(
+        {
+          'change' : function( )
+                     {
+                       $.each( $( "input[name='color-radio']" ),
+                               function( )
+                               {
+									if(allFilled()) 
+									{
+										if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
+										{
+											$('#register').removeAttr('disabled');
+											$('#register').popover('disable')
+										}
+										else
+										{
+											$('#register').attr('disabled', true);
+											$('#register').popover('enable')
+										}
+									}
+									else 
+									{
+										$('#register').attr('disabled', true);
+											$('#register').popover('enable')
+									}
+                               }
+                             );
+                     }
+        }
+     );
 
     // Sliding down the new options on click
     $("#type label").click(function() {
