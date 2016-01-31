@@ -392,6 +392,14 @@ input[type=radio]:checked+label div svg path{
     margin-top: -32px;
 	visibility: hidden;
 }
+.info_back_info {
+	position: absolute;
+	background: #eb1484;
+    z-index: -1;
+	width: 100%;
+	height: 100%;
+    margin-top: -32px;
+}
 
 .sharp {
     /*Make the element have sharp edges.*/
@@ -582,4 +590,41 @@ input[type=radio]:checked+label div svg path{
 #rc_5, #rc_5_xs {
 	padding-bottom: 0px; 
 	padding-top: 0px;
+}
+
+#jobs, #contact {
+	text-align: center;
+	color: #666666;
+	font-size: 5vw;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: auto;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#jobs_p, #contact_p {
+	text-align: center;
+	color: #666666;
+	font-size: 3vw;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: auto;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#info_footer {
+	text-align: center;
+	color: white;
+	font-size: 1.5vw;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: auto;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
 }
