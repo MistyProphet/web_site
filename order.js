@@ -6,6 +6,40 @@
 $(document).ready(function() {
 
     var ERROR_BACKGROUND_COLOR = "#ff9999";
+	
+	
+	// Funkcija koja prikazuje popover sa greskom
+	$('[data-toggle="popover"]').popover();
+	
+	
+	// Funkcija koja proverava da li su sva polja ispunjena
+	$('#plates, #phone, #city_select, #street, #street_number, #app_num').bind('keyup', function() {
+		if(allFilled()) 
+		{
+			if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
+			{
+				$('#register').removeAttr('disabled');
+				$('#register').popover('disable')
+			}
+			else
+			{
+				$('#register').attr("disabled", true);
+				$('[data-toggle="popover"]').popover();
+			}
+		}
+		else 
+		{
+			$('#register').attr("disabled", true);
+			$('[data-toggle="popover"]').popover();
+		}
+	});
+	function allFilled() {
+		var filled = true;
+		$('body input').each(function() {
+			if($(this).val() == '') filled = false;
+		});
+		return filled;
+	}
 
     // Sliding down the new options on click
     $("#type label").click(function() {
@@ -179,5 +213,9 @@ $(document).ready(function() {
 	$('.dropdown-menu a').on('click', function(){ 
 		$("#city_select").html($(this).html() + '<span class="caret"></span>'); 
 	});
+	
+	
+	// Funkcija za validaciju input polja
+	
 
 });

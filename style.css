@@ -668,3 +668,7 @@ input[type=radio]:checked+label div svg path{
 	margin-left: 0px;
 	margin-right: 0px;
 }
+
+.popover {
+	width: 180px;
+}

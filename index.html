@@ -210,7 +210,7 @@
 			<!-- Inputs -->
 			<div hidden class="input_container" id="inputs">
 				<div class="container">
-					<form class="form-horizontal">
+					<form class="form-horizontal" name="frm">
 
 						<!-- Registration input -->
 						<div class="form-group">
@@ -229,51 +229,51 @@
 										<label class="color_label_text" for="color_holder" >Boja vozila</label>
 									</div>
 									<div class="color_holder" id="color_holder">
-										<input type="radio" id="color-radio1" name="color-radio"/>
+										<input type="radio" id="color-radio1" name="color-radio" value="red"/>
 										<label for="color-radio1">
 											<div class="color color1"></div>
 										</label>
-										<input type="radio" id="color-radio2" name="color-radio"/>
+										<input type="radio" id="color-radio2" name="color-radio" value="pink"/>
 										<label for="color-radio2">
 											<div class="color color2"></div>
 										</label>
-										<input type="radio" id="color-radio3" name="color-radio"/>
+										<input type="radio" id="color-radio3" name="color-radio" value="purple"/>
 										<label for="color-radio3">
 											<div class="color color3"></div>
 										</label>
-										<input type="radio" id="color-radio4" name="color-radio"/>
+										<input type="radio" id="color-radio4" name="color-radio" value="blue"/>
 										<label for="color-radio4">
 											<div class="color color4"></div>
 										</label>
-										<input type="radio" id="color-radio5" name="color-radio"/>
+										<input type="radio" id="color-radio5" name="color-radio" value="cyan"/>
 										<label for="color-radio5">
 											<div class="color color5"></div>
 										</label>
-										<input type="radio" id="color-radio6" name="color-radio"/>
+										<input type="radio" id="color-radio6" name="color-radio" value="dark_gray"/>
 										<label for="color-radio6">
 											<div class="color color6"></div>
 										</label>
-										<input type="radio" id="color-radio7" name="color-radio"/>
+										<input type="radio" id="color-radio7" name="color-radio" value="green"/>
 										<label for="color-radio7">
 											<div class="color color7"></div>
 										</label>
-										<input type="radio" id="color-radio8" name="color-radio"/>
+										<input type="radio" id="color-radio8" name="color-radio" value="yellow"/>
 										<label for="color-radio8">
 											<div class="color color8"></div>
 										</label>
-										<input type="radio" id="color-radio9" name="color-radio"/>
+										<input type="radio" id="color-radio9" name="color-radio" value="orange_gold"/>
 										<label for="color-radio9">
 											<div class="color color9"></div>
 										</label>
-										<input type="radio" id="color-radio10" name="color-radio"/>
+										<input type="radio" id="color-radio10" name="color-radio" value="white"/>
 										<label for="color-radio10">
 											<div class="color color10"></div>
 										</label>
-										<input type="radio" id="color-radio11" name="color-radio"/>
+										<input type="radio" id="color-radio11" name="color-radio" value="black"/>
 										<label for="color-radio11">
 											<div class="color color11"></div>
 										</label>
-										<input type="radio" id="color-radio12" name="color-radio"/>
+										<input type="radio" id="color-radio12" name="color-radio" value="light_gray"/>
 										<label for="color-radio12">
 											<div class="color color12"></div>
 										</label>
@@ -374,7 +374,12 @@
 							<div class="row row-centered">
 								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 									<div>
-										<a href="#" class="btn btn-lg btn-custom sharp">
+										<a class="btn btn-lg btn-custom sharp visible-md-block visible-lg-block" type="submit" id="register" disabled data-trigger="hover" 
+											data-placement="right" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja">
+											<span class="btn_text">Naru&ccaron;i</span>
+										</a>
+										<a class="btn btn-lg btn-custom sharp visible-xs-block visible-sm-block" type="submit" id="register" disabled data-trigger="hover" 
+											data-placement="top" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja">
 											<span class="btn_text">Naru&ccaron;i</span>
 										</a>
 									</div>
