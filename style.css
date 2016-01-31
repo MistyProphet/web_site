@@ -114,16 +114,22 @@ body {
 	font-size: 5vmin;
 }
 
+.navbar-custom .navbar-header{
+	max-width: 420px;
+}
 .logo {
-	background-image: url("logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+	color: white;
 	min-height: 60px;
-	width: 65vw;
-	max-width: 260px;
+	width: auto;
 	float: left;
 	margin-left: 3vw;
 	margin-top: 8px;
+	font-size: 8vmin;
+	font-weight: 600;
+}
+.logo_img {
+    background-repeat: no-repeat;
+	float: left;
 }
 
 .menu_item {
