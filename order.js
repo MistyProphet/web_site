@@ -89,52 +89,70 @@ $(document).ready(function() {
     $("#type-radio1").click(function() {
         $("#type-fill").text("motor");
         $("#type-fill_rc").text("motor");
+        $("#type-fill_rc_xs").text("motor");
         $("#type-fill_rc_cost").text("300");
+        $("#type-fill_rc_cost_xs").text("300");
 		type = 300;
 		total = type + time;
-        $("#total_rc_cost").text(total.toString());
+        $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
     $("#type-radio2").click(function() {
         $("#type-fill").text("auto");
         $("#type-fill_rc").text("auto");
+        $("#type-fill_rc_xs").text("auto");
         $("#type-fill_rc_cost").text("400");
+        $("#type-fill_rc_cost_xs").text("400");
 		type = 400;
 		total = type + time;
-        $("#total_rc_cost").text(total.toString());
+        $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
     $("#type-radio3").click(function() {
         $("#type-fill").text("kamion");
         $("#type-fill_rc").text("kamion");
+        $("#type-fill_rc_xs").text("kamion");
         $("#type-fill_rc_cost").text("550");
+        $("#type-fill_rc_cost_xs").text("550");
 		type = 550;
 		total = type + time;
-        $("#total_rc_cost").text(total.toString());
+        $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
 		
     // Text filler for the time buttons
     $("#time-radio1").click(function() {
         $("#time-fill").text("pola sata");
         $("#time-fill_rc").text("pola sata");
+        $("#time-fill_rc_xs").text("pola sata");
         $("#time-fill_rc_cost").text("150");
+        $("#time-fill_rc_cost_xs").text("150");
 		time = 150;
 		total = type + 150;
         $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
     $("#time-radio2").click(function() {
         $("#time-fill").text("tri sata");
         $("#time-fill_rc").text("tri sata");
+        $("#time-fill_rc_xs").text("tri sata");
         $("#time-fill_rc_cost").text("0");
+        $("#time-fill_rc_cost_xs").text("0");
 		time = 0;
 		total = type;
         $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
     $("#time-radio3").click(function() {
         $("#time-fill").text("par dana");
         $("#time-fill_rc").text("par dana");
+        $("#time-fill_rc_xs").text("par dana");
         $("#time-fill_rc_cost").text("0");
+        $("#time-fill_rc_cost_xs").text("0");
 		time = 0;
 		total = type;
         $("#total_rc_cost").text(total);
+        $("#total_rc_cost_xs").text(total);
 		});
 
     // Text filler for the payment buttons

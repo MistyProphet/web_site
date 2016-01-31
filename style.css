@@ -526,9 +526,26 @@ input[type=radio]:checked+label div svg path{
 	margin-top: -1vh;
 	z-index: 70;
 }
+.receipt_holder_xs {
+	z-index: 70;
+	width: 227px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
 .receipt_container {
 	overflow: hidden;
 	min-width: 287px;
+	height: auto;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+.receipt_container_xs {
+	overflow: hidden;
+	min-width: 227px;
 	height: auto;
     background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
@@ -540,22 +557,29 @@ input[type=radio]:checked+label div svg path{
 	display: block;
 	width: 290px;
 }
-#rc_1 {
+.receipt_xs {
+	display: block;
+	width: 227px;
+    text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+#rc_1, #rc_1_xs {
 	padding-left: 23px; 
 	padding-right: 23px;
 }
-#rc_2 {
+#rc_2, #rc_2_xs {
 	margin-top: 5px; 
 	margin-bottom: 0px;
 }
-#rc_3 {
+#rc_3, #rc_3_xs {
 	margin-bottom: 0px;
 }
-#rc_4 {
+#rc_4, #rc_4_xs {
 	padding-bottom: 0px; 
 	padding-top: 0px;
 }
-#rc_5 {
+#rc_5, #rc_5_xs {
 	padding-bottom: 0px; 
 	padding-top: 0px;
 }
