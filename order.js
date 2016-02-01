@@ -104,10 +104,6 @@ $(document).ready(function() {
 			$('html, body').animate({
 				scrollTop: $("#time").offset().top - ($("#time").height())
 			}, 2000);
-			$("#receipt_holder").slideDown("slow", function() {
-			});
-			$("#receipt").slideDown("slow", function() {
-			});
 		});
     });
     $("#time label").click(function() {
@@ -123,6 +119,10 @@ $(document).ready(function() {
 			$('html, body').animate({
 				scrollTop: $("#inputs").offset().top - ($("#pay").height())
 			}, 2000);
+			$("#receipt_holder").slideDown("slow", function() {
+			});
+			$("#receipt").slideDown("slow", function() {
+			});
 		});
     });
 
