@@ -36,7 +36,16 @@ $(document).ready(function() {
 	function allFilled() {
 		var filled = true;
 		$('body input').each(function() {
-			if($(this).val() == '') filled = false;
+			if($(this).val() == '')
+			{	
+				if(this.id === 'app_num') {
+					
+				}
+				else 
+				{
+					filled = false;
+				}
+			}
 		});
 		var ok = checkIsPhoneValid();
 		if (ok)
