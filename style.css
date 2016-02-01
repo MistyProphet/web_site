@@ -250,7 +250,7 @@ body {
 	margin-left: -31px;
 }
 
-#time, #pay , #type{
+#time, #type{
 	text-align: center;
 	color: #666666;
 	font-size: 50px;
@@ -261,6 +261,19 @@ body {
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
+}
+#pay {
+	text-align: center;
+	color: #666666;
+	font-size: 50px;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: auto;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	z-index: 1;
 }
 #clock, #number {
 	margin-top: 10px;
@@ -388,19 +401,45 @@ input[type=radio]:checked+label div svg path{
 	height: auto;
 	width: 100%;
     margin-top: -32px;
+    margin-bottom: 32px;
 	background: transparent;
-	overflow: hidden;
 }
 
 .info_back {
 	position: absolute;
 	background: #eb1484;
-    z-index: -1;
+	border: solid #9c9dad;
+    border-width: 0px 0px 1px 0px;
+    margin-top: -30px;
+	margin-bottom: 32px;
+    z-index: 0;
 	width: 100%;
 	height: 100%;
-    margin-top: -32px;
 	visibility: hidden;
 }
+.info_back:after, .info_back:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.info_back:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #eb1484;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.info_back:before {
+	border-color: rgba(156, 157, 173, 0);
+	border-top-color: #ffe0fb;
+	border-width: 31px;
+	margin-left: -31px;
+}
+
 .info_back_info {
 	position: absolute;
 	background: #eb1484;
@@ -667,6 +706,22 @@ input[type=radio]:checked+label div svg path{
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
+}
+
+.footer {
+	text-align: center;
+	color: white;
+	font-size: 1.5vw;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: 180px;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: -67px;
+	background: #00a5ce;
+	z-index: -5;
 }
 
 .popover {
