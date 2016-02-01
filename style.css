@@ -16,6 +16,7 @@ body {
 	height: auto;
 	width: 100%;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	z-index: 1;
 }
 .welcome_holder:after, .welcome_holder:before {
 	top: 100%;
@@ -180,7 +181,7 @@ body {
 	margin-bottom: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1425px) {
     .navbar-custom .navbar-header {
         float: none;
     }
