@@ -731,7 +731,7 @@ input[type=radio]:checked+label div svg path{
 #jobs_p, #contact_p {
 	text-align: center;
 	color: #666666;
-	font-size: 3vw;
+	font-size: 2.5vw;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	padding-top: 18px;
 	font-weight: 100;
