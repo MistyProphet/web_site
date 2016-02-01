@@ -36,8 +36,35 @@ $(document).ready(function() {
 	function allFilled() {
 		var filled = true;
 		$('body input').each(function() {
-			if($(this).val() == '') filled = false;
+			if($(this).val() == '')
+			{	
+				if(this.id === 'app_num') {
+					
+				}
+				else 
+				{
+					filled = false;
+				}
+			}
 		});
+		var ok = checkIsPhoneValid();
+		if (ok)
+		{
+			$("#phone").css({'background-color': "white"})
+		}
+		else
+		{
+			filled = false;
+		}
+		var ok = checkIsPlateValid();
+		if (ok)
+		{
+			$("#plates").css({'background-color': "white"})
+		}
+		else
+		{
+			filled = false;
+		}
 		return filled;
 	}
 	$( "input[name='color-radio']" ).on(
@@ -115,13 +142,21 @@ $(document).ready(function() {
 
         var phone = $("#phone").val();
         if (phone != "") {
-            var match = phone.search(phone_regex);
-            if (match == -1)
-                $("#phone").css({'background-color': ERROR_BACKGROUND_COLOR})
-            else
+            var ok = checkIsPhoneValid();
+            if (ok)
                 $("#phone").css({'background-color': "white"})
+            else
+                $("#phone").css({'background-color': ERROR_BACKGROUND_COLOR})
         }
     });
+	function checkIsPhoneValid() {
+		var phone = $("#phone").val();
+		var match = phone.search(phone_regex);
+		if (match == -1)
+			return false;
+		else
+			return true;
+	}
 
     // Set the registration input placeholder on click
     $("#plates").focusin(function() {
@@ -136,13 +171,21 @@ $(document).ready(function() {
 
         var licence = $("#plates").val();
         if (licence != "") {
-            var match = licence.search(licence_regex);
-            if (match == -1)
-                $("#plates").css({'background-color': ERROR_BACKGROUND_COLOR});
-            else
+            var ok = checkIsPlateValid();
+            if (ok)
                 $("#plates").css({'background-color': 'white'});
+            else
+                $("#plates").css({'background-color': ERROR_BACKGROUND_COLOR});
         }
     });
+	function checkIsPlateValid() {
+		var licence = $("#plates").val();
+		var match = licence.search(licence_regex);
+		if (match == -1)
+			return false;
+		else
+			return true;
+	}
 
 	var type = 0;
 	var time = 0;
