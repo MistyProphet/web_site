@@ -165,7 +165,7 @@ $(document).ready(function() {
 
     // Reset the registration placeholder on focus out
     // Set the background red if the plates aren't a match
-    licence_regex = /^[a-zA-Z]{2}-?[0-9]{3}-?[a-zA-Z]{2}$/;
+    licence_regex = /^[a-zA-ZčćžđšČĆŽĐŠ]{2}-?[0-9]{3}-?[a-zA-ZčćžđšČĆŽĐŠ]{2}$/;
     $("#plates").focusout(function() {
         $("#plates").attr("placeholder", "Registracija");
 
