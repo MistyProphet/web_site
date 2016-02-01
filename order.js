@@ -12,25 +12,55 @@ $(document).ready(function() {
 	$('[data-toggle="popover"]').popover();
 	
 	
+	validate = function() {
+		if(allFilled()) 
+		{
+			if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
+			{
+				$('#register').popover('disable')
+				// Ovde uraditi redirect na server i poslati formu?
+				// document.getElementById('frm').submit();
+				// Da li je potrebno dodati href="#" u a tag za slanje forme?
+				return true;
+				// UKOLIKO PRETHODNO NE RADI, PROBATI SA OVIM!!!
+				/*
+				$("#AddItem").click(function(event)
+				  {
+					event.preventDefault(); // cancel default behavior
+
+					//... rest of add logic
+				  });
+				*/
+			}
+			else
+			{
+				$('#register').popover('enable')
+				return false;
+			}
+		}
+		else 
+		{
+			$('#register').popover('enable')
+			return false;
+		}
+	}
+	
 	// Funkcija koja proverava da li su sva polja ispunjena
 	$('#plates, #phone, #city_select, #street, #street_number, #app_num').bind('keyup', function() {
 		if(allFilled()) 
 		{
 			if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
 			{
-				$('#register').removeAttr('disabled');
 				$('#register').popover('disable')
 			}
 			else
 			{
-				$('#register').attr('disabled', true);
 				$('#register').popover('enable')
 			}
 		}
 		else 
 		{
-			$('#register').attr('disabled', true);
-				$('#register').popover('enable')
+			$('#register').popover('enable')
 		}
 	});
 	function allFilled() {
@@ -78,19 +108,16 @@ $(document).ready(function() {
 									{
 										if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
 										{
-											$('#register').removeAttr('disabled');
 											$('#register').popover('disable')
 										}
 										else
 										{
-											$('#register').attr('disabled', true);
 											$('#register').popover('enable')
 										}
 									}
 									else 
 									{
-										$('#register').attr('disabled', true);
-											$('#register').popover('enable')
+										$('#register').popover('enable')
 									}
                                }
                              );
