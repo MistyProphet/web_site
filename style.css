@@ -450,10 +450,35 @@ input[type=radio]:checked+label div svg path{
 .info_back_info {
 	position: absolute;
 	background: #eb1484;
-    z-index: -15;
+	border: solid #9c9dad;
+    border-width: 0px 0px 1px 0px;
+    z-index: 0;
 	width: 100%;
 	height: 100%;
-    margin-top: -32px;
+    margin-top: -30px;
+	margin-bottom: 32px;
+}
+.info_back_info:after, .info_back_info:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.info_back_info:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #eb1484;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.info_back_info:before {
+	border-color: rgba(156, 157, 173, 0);
+	border-top-color: #ffe0fb;
+	border-width: 31px;
+	margin-left: -31px;
 }
 
 .sharp {
@@ -677,7 +702,7 @@ input[type=radio]:checked+label div svg path{
 	padding-top: 0px;
 }
 
-#jobs, #contact {
+#jobs {
 	text-align: center;
 	color: #666666;
 	font-size: 5vw;
@@ -689,6 +714,19 @@ input[type=radio]:checked+label div svg path{
 	margin-left: 0px;
 	margin-right: 0px;
 	z-index: -5;
+}
+#contact {
+	text-align: center;
+	color: #666666;
+	font-size: 5vw;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding-top: 18px;
+	font-weight: 100;
+	height: auto;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	z-index: 1;
 }
 #jobs_p, #contact_p {
 	text-align: center;
@@ -722,7 +760,7 @@ input[type=radio]:checked+label div svg path{
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	padding-top: 18px;
 	font-weight: 100;
-	height: 180px;
+	height: 100px;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
