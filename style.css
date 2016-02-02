@@ -138,6 +138,10 @@ body {
     background-repeat: no-repeat;
 	float: left;
 }
+#logo_link {
+	color: white;
+	text-decoration: none
+}
 
 .menu_item {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
