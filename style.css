@@ -604,40 +604,40 @@ input[type=radio]:checked+label div svg path{
 }
 
 .color1{
-	background: red;
+	background: white;
 }
 .color2{
-	background: magenta;
+	background: red;
 }
 .color3{
-	background: #9900cc;
+	background: ForestGreen  ;
 }
 .color4{
 	background: blue;
 }
 .color5{
-	background: cyan;
-}
-.color6{
-	background: #595959;
-}
-.color7{
-	background: lime;
-}
-.color8{
-	background: yellow;
-}
-.color9{
-	background: orange;
-}
-.color10{
-	background: white;
-}
-.color11{
 	background: black;
 }
+.color6{
+	background: LightGray;
+}
+.color7{
+	background: DimGrey ;
+}
+.color8{
+	background: GoldenRod ;
+}
+.color9{
+	background: Yellow ;
+}
+.color10{
+	background: LimeGreen;
+}
+.color11{
+	background: DarkViolet ;
+}
 .color12{
-	background: #cccccc;
+	background: Aquamarine;
 }
 
 .btn-custom {
