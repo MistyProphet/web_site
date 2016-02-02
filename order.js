@@ -133,7 +133,14 @@ $(document).ready(function() {
 			}, 2000);
 		});
     });
-    $("#time label").click(function() {
+    $("#time #time1").click(function() {
+        $("#pay").slideDown("slow", function() {
+			$('html, body').animate({
+				scrollTop: $("#pay").offset().top - ($("#pay").height())
+			}, 2000);
+		});
+    });
+    $("#time #time2").click(function() {
         $("#pay").slideDown("slow", function() {
 			$('html, body').animate({
 				scrollTop: $("#pay").offset().top - ($("#pay").height())
