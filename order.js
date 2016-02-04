@@ -8,9 +8,26 @@ $(document).ready(function() {
     var ERROR_BACKGROUND_COLOR = "#ff9999";
 	
 	
+	// Izracunava vreme i da li je potrebno "zatvoriti" sajt
+	var dateNow = new Date();
+	var dateItHappens = new Date();
+	dateItHappens.setFullYear(dateNow.getFullYear());
+	dateItHappens.setMonth(dateNow.getMonth());
+	dateItHappens.setDate(dateNow.getDate());
+	dateItHappens.setHours(18);
+	dateItHappens.setMinutes(0);
+	dateItHappens.setSeconds(0);
+	dateItHappens.setMilliseconds(0);
+	var millisTillOccurence = dateItHappens.getTime() - dateNow.getTime();
+	setTimeout(function(){ 
+			$('#closed').toggle();
+			$('#wash_holder_id').toggle();
+			$('#info_holder_id').toggle();
+		}, millisTillOccurence);
+	
+	
 	// Funkcija koja prikazuje popover sa greskom
 	$('[data-toggle="popover"]').popover();
-	
 	
 	validate = function() {
 		if(allFilled()) 
