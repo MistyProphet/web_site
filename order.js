@@ -19,11 +19,11 @@ $(document).ready(function() {
 	dateItHappens.setSeconds(0);
 	dateItHappens.setMilliseconds(0);
 	var millisTillOccurence = dateItHappens.getTime() - dateNow.getTime();
-	setTimeout(function(){ 
-			$('#closed').toggle();
-			$('#wash_holder_id').toggle();
-			$('#info_holder_id').toggle();
-		}, millisTillOccurence);
+	//setTimeout(function(){ 
+			//$('#closed').toggle();
+			//$('#wash_holder_id').toggle();
+			//$('#info_holder_id').toggle();
+		//}, millisTillOccurence);
 	
 	
 	// Funkcija koja prikazuje popover sa greskom
