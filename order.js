@@ -14,7 +14,7 @@ $(document).ready(function() {
 	dateItHappens.setFullYear(dateNow.getFullYear());
 	dateItHappens.setMonth(dateNow.getMonth());
 	dateItHappens.setDate(dateNow.getDate());
-	dateItHappens.setHours(18);
+	dateItHappens.setHours(20);
 	dateItHappens.setMinutes(0);
 	dateItHappens.setSeconds(0);
 	dateItHappens.setMilliseconds(0);
@@ -62,6 +62,26 @@ $(document).ready(function() {
 		}
 	}
 	
+	activate = function() {
+		var filled = true;
+		$('body input').each(function() {
+			if($(this).val() == '')
+			{	
+				filled = false;
+			}
+		});
+		if(filled) 
+		{
+			$('#code_confirm').popover('disable')
+			return true;
+		}
+		else 
+		{
+			$('#code_confirm').popover('enable')
+			return false;
+		}
+	}
+	
 	// Funkcija koja proverava da li su sva polja ispunjena
 	$('#plates, #phone, #city_select, #street, #street_number, #app_num').bind('keyup', function() {
 		if(allFilled()) 
@@ -79,6 +99,9 @@ $(document).ready(function() {
 		{
 			$('#register').popover('enable')
 		}
+	});
+	$('#activation_code').bind('keyup', function() {
+		activate();
 	});
 	function allFilled() {
 		var filled = true;

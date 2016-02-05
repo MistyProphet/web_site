@@ -5,6 +5,7 @@ body {
 .sections{
 	width: 100%;
 	height: 100%;
+	bottom: 0;
 }
 
 .welcome_holder {
@@ -478,6 +479,7 @@ input[type=radio]:checked+label div svg path{
 	height: 100%;
     margin-top: -30px;
 	margin-bottom: 32px;
+	padding-top: 1.5%;
 }
 .info_back_info:after, .info_back_info:before {
 	top: 100%;
@@ -626,6 +628,10 @@ input[type=radio]:checked+label div svg path{
 	color: #666666;
 	/*margin-top: 30px;*/
 }
+#code_confirm, #order_confirm {
+	border: 1px solid #a1a1a1;
+	margin-bottom: 4%;
+}
 
 .receipt_holder {
 	width: 100%;
@@ -738,7 +744,7 @@ input[type=radio]:checked+label div svg path{
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	padding-top: 18px;
 	font-weight: 100;
-	height: auto;
+	height: 100%;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
@@ -751,13 +757,15 @@ input[type=radio]:checked+label div svg path{
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	padding-top: 18px;
 	font-weight: 100;
-	height: 100px;
+	min-height: 100px;
+	height: 100%;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-top: -67px;
 	background: #00a5ce;
 	z-index: -5;
+	bottom: 0;
 }
 
 .popover {
