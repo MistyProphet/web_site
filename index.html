@@ -4,12 +4,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>OperiMe.rs</title>
-	<link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="order.js"></script>
-	<script src="autocomplete.js"></script>
+    <script src="{% static 'order.js' %}"></script>
+    <script src="{% static 'autocomplete.js' %}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_cQAh5FAvArzdC08hvcK0Jzpw5Cpan4w&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
 </head>
 <body>
@@ -29,7 +30,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-header">
-							<p class="logo"><a href="index.html" id="logo_link">OPERIME.RS</a></p><img src="logo_bubbles.png" alt="" height="42" width="42" class="logo_img">
+                            <p class="logo"><a href="index.html" id="logo_link">OPERIME.RS</a></p><img src="{% static 'logo_bubbles.png' %}" alt="" height="42" width="42" class="logo_img">
 						</div>
 					</div>
 					<div class="navbar-collapse collapse" id="myNavbar">
@@ -173,7 +174,7 @@
 
 		<!-- Order time buttons -->
 		<div hidden class="wash" id="time"><span>U roku od <span class="label-filler" id="time-fill"></span></span><br/>
-			<img id="clock" src="clock.png" /><br/>
+            <img id="clock" src="{% static 'clock.png' %}" /><br/>
 			<div class="container">
 				<div class="row row-centered">
 					<input type="radio" id="time-radio1" name="priority"/>
@@ -194,7 +195,7 @@
 
         <!-- Payment radio buttons -->
 		<div hidden class="wash" id="pay"><span>I platim <span class="label-filler" id="pay-fill"></span></span><br/>
-			<img id="number" src="number.png" /><br/>
+            <img id="number" src="{% static 'number.png' %}" /><br/>
 			<div class="container">
 				<div class="row row-centered">
 					<input type="radio" id="pay-radio1" name="payment"/>
