@@ -30,7 +30,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-header">
-                            <p class="logo"><a href="index.html" id="logo_link">OPERIME.RS</a></p><img src="{% static 'logo_bubbles.png' %}" alt="" height="42" width="42" class="logo_img">
+                            <p class="logo"><a href="/" id="logo_link">OPERIME.RS</a></p><img src="{% static 'logo_bubbles.png' %}" alt="" height="42" width="42" class="logo_img">
 						</div>
 					</div>
 					<div class="navbar-collapse collapse" id="myNavbar">
@@ -64,379 +64,398 @@
 	<div class="offer"><span>&Zcaron;elite pranje vozila<br/>u roku od <b>30 min</b><span style="font-family: 'Times New Roman"' Georgia, Serif;">?</span><br/><span id="price">+150 RSD</span></span></div>
 	-->
 
+    <!-- Errors -->
+    <h1>
+        {{ error }}
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-error">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-error">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </h1>
+
 	<div hidden id="closed"><p>Trenutno ne radimo...</p></div>
 
-	<div class="wash_holder" id="wash_holder_id"><span>
-		
-		<!-- Car type buttons -->
-		<div class="wash"  id="type"><span>&Zcaron;elim da operem <span class="label-filler" id="type-fill"></span></span><br/>
-			<div class="container">
-				<div class="row row-centered">
-					<input type="radio" id="type-radio1" name="vehicle_type" value="1"/>
-					<label for="type-radio1" class="col-xs-4 col-md-4 vehicle-button">
-						<div class="type_button">
-							<div class="type_text">Motor</div>
-							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 width="205.721px" height="127.973px" viewBox="12.72 0 205.721 127.973" enable-background="new 12.72 0 205.721 127.973"
-								 xml:space="preserve" stroke-width="1.5%">
-								<path fill="none" d="M-44.196-172.16c-16.46,0-29.805,13.346-29.805,29.806c0,16.461,13.346,29.807,29.805,29.807
-									c16.461,0,29.804-13.346,29.804-29.807S-27.736-172.16-44.196-172.16 M-44.196-125.798c-9.131,0-16.56-7.43-16.56-16.562
-									s7.429-16.56,16.56-16.56c9.13,0,16.558,7.428,16.558,16.56C-27.638-133.225-35.066-125.798-44.196-125.798"/>
-								<path fill="none" d="M77.072-172.16c-3.363,0-6.593,0.566-9.608,1.595l-8.196-12.771c1.765-1.299,3.569-2.471,5.371-3.415v-14.66
-									l-13.166,5.936L39.26-214.499L15.398-214.5l-4.384,3.648l20.016,6.521l8.995,14.014l-23.748,11.12L-6.942-194.51l-37.254-5.938
-									v9.521l27.371,20.973l16.945,35.188h32.864l8.489-30.839c0,0,3.416-4.419,8.361-9.433l6.959,10.839
-									c-5.858,5.442-9.528,13.211-9.528,21.839c0,16.461,13.344,29.805,29.804,29.805c16.463,0,29.807-13.344,29.807-29.805
-									C106.876-158.817,93.533-172.16,77.072-172.16 M77.072-125.798c-9.129,0-16.558-7.43-16.558-16.562
-									c0-3.918,1.369-7.521,3.651-10.354l8.803,13.711l10.449-6.708l-8.393-13.073c0.671-0.083,1.352-0.13,2.043-0.13
-									c9.131,0,16.561,7.43,16.561,16.56C93.63-133.225,86.202-125.798,77.072-125.798"/>
-								<g>
-									<g>
-										<path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M54.699,57.422c-16.462,0-29.807,13.346-29.807,29.803
-											c0,16.46,13.345,29.808,29.807,29.808c16.459,0,29.803-13.348,29.803-29.808C84.501,70.766,71.158,57.422,54.699,57.422z
-											 M54.699,103.782c-9.132,0-16.561-7.431-16.561-16.56c0-9.132,7.429-16.559,16.561-16.559c9.129,0,16.558,7.427,16.558,16.559
-											C71.256,96.354,63.828,103.782,54.699,103.782z M175.966,57.422c-3.358,0-6.594,0.563-9.606,1.594l-8.195-12.771
-											c1.766-1.301,3.568-2.471,5.371-3.416v-14.66l-13.166,5.938l-12.213-19.021h-23.861l-4.383,3.648l20.017,6.519l8.993,14.014
-											L115.173,50.39L91.955,35.077L54.7,29.141v9.521l27.372,20.973L99.017,94.82h32.862l8.49-30.839c0,0,3.416-4.418,8.358-9.433
-											l6.959,10.841c-5.856,5.44-9.526,13.209-9.526,21.835c0,16.46,13.344,29.806,29.805,29.806c16.464,0,29.81-13.346,29.81-29.806
-											C205.772,70.764,192.429,57.422,175.966,57.422z M175.966,103.782c-9.129,0-16.559-7.431-16.559-16.56
-											c0-3.917,1.368-7.521,3.651-10.354l8.803,13.71l10.451-6.708L173.918,70.8c0.67-0.084,1.354-0.131,2.043-0.131
-											c9.129,0,16.563,7.429,16.563,16.559C192.526,96.356,185.097,103.782,175.966,103.782z"/>
-									</g>
-								</g>
-							</svg>
-							<div class="type_text_under">300 RSD</div>
-						</div>
-					</label>
-					<input type="radio" id="type-radio2" name="vehicle_type" value="2"/>
-					<label for="type-radio2" class="col-xs-4 col-md-4 vehicle-button">
-						<div class="type_button">
-							<div class="type_text">Auto</div>
-							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 width="263.76px" height="123.344px" viewBox="0 0 263.76 123.344" enable-background="new 0 0 263.76 123.344"
-								 xml:space="preserve" stroke-width="1.5%">
-								<path fill="none" d="M-33.067-637.145c-16.46,0-29.806,13.346-29.806,29.806c0,16.461,13.347,29.805,29.806,29.805
-									c16.461,0,29.804-13.344,29.804-29.805S-16.607-637.145-33.067-637.145 M-33.067-590.783c-9.13,0-16.561-7.428-16.561-16.559
-									c0-9.132,7.431-16.562,16.561-16.562s16.558,7.428,16.558,16.562C-16.509-598.21-23.937-590.783-33.067-590.783"/>
-								<path fill="none" d="M88.201-637.145c-3.364,0-6.593,0.566-9.609,1.595l-8.195-12.771c1.765-1.299,3.568-2.469,5.371-3.415v-14.66
-									L62.6-660.463l-12.211-19.021l-23.862-0.001l-4.384,3.65l20.016,6.519l8.995,14.014L27.406-644.18L4.187-659.498l-37.254-5.937
-									v9.521l27.372,20.973l16.944,35.19h32.865l8.489-30.839c0,0,3.416-4.419,8.36-9.433l6.959,10.841
-									c-5.857,5.438-9.527,13.209-9.527,21.837c0,16.461,13.344,29.805,29.804,29.805c16.461,0,29.805-13.344,29.805-29.805
-									C118.005-623.802,104.662-637.145,88.201-637.145 M88.201-590.783c-9.129,0-16.558-7.428-16.558-16.559
-									c0-3.918,1.37-7.521,3.65-10.356l8.805,13.711l10.447-6.708l-8.392-13.073c0.671-0.083,1.351-0.13,2.043-0.13
-									c9.13,0,16.559,7.428,16.559,16.56C104.759-598.21,97.331-590.783,88.201-590.783"/>
-								<path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M246.761,76.542h-1.178c-1.576-8.776-4.896-16.248-6.265-17.942
-									c-1.246-1.547-3.038-2.559-5.008-2.817l-47.737-8.65c0,0-26.935-25.723-42.909-25.723l-53.83-0.009
-									c-10.437,0-19.156,7.952-29.258,17.16C55.82,42.9,50.566,47.675,44.771,51.922l-21.581,2.87c-3.118,0.995-5.377,3.913-5.377,7.357
-									v24.729c0,4.268,3.459,7.727,7.727,7.727h20.67c3.871,10.207,13.745,17.483,25.292,17.483s21.422-7.276,25.292-17.483h74.463
-									c3.87,10.207,13.744,17.483,25.292,17.483c11.549,0,21.424-7.276,25.292-17.483l24.925-0.015c1.42,0,2.566-1.149,2.566-2.569V79.115
-									C249.331,77.691,248.183,76.542,246.761,76.542z M71.5,95.348c-5.68,0-10.302-4.623-10.302-10.304
-									c0-5.684,4.622-10.304,10.302-10.304c5.684,0,10.306,4.62,10.306,10.304C81.803,90.725,77.182,95.348,71.5,95.348z M196.549,95.348
-									c-5.682,0-10.304-4.623-10.304-10.304c0-5.684,4.622-10.304,10.304-10.304c5.684,0,10.305,4.62,10.305,10.304
-									C206.851,90.725,202.229,95.348,196.549,95.348z"/>
-							</svg>
-							<div class="type_text_under">400 RSD</div>
-						</div>
-					</label>
-					<input type="radio" id="type-radio3" name="vehicle_type" value="3"/>
-					<label for="type-radio3" class="col-xs-4 col-md-4 vehicle-button">
-						<div class="type_button">
-							<div class="type_text">Kamion</div>
-							<svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 width="251.445px" height="137.14px" viewBox="0 0 251.445 137.14" enable-background="new 0 0 251.445 137.14"
-								 xml:space="preserve" stroke-width="1.5%">
-								<path fill="none" d="M-33.067-637.145c-16.46,0-29.804,13.344-29.804,29.804c0,16.461,13.345,29.805,29.804,29.805
-									c16.461,0,29.804-13.344,29.804-29.805C-3.263-623.802-16.607-637.145-33.067-637.145 M-33.067-590.783
-									c-9.13,0-16.559-7.428-16.559-16.559c0-9.13,7.429-16.558,16.559-16.558s16.558,7.428,16.558,16.558
-									C-16.509-598.21-23.937-590.783-33.067-590.783"/>
-								<path fill="none" d="M88.201-637.145c-3.364,0-6.593,0.566-9.609,1.593l-8.197-12.77c1.765-1.299,3.57-2.469,5.371-3.415v-14.66
-									L62.6-660.463l-12.211-19.021l-23.862-0.001l-4.384,3.65l20.016,6.519l8.995,14.012l-23.748,11.122L4.187-659.498l-37.254-5.935
-									v9.521l27.372,20.973l16.945,35.189h32.865l8.489-30.839c0,0,3.416-4.419,8.362-9.431l6.959,10.839
-									c-5.859,5.442-9.529,13.209-9.529,21.837c0,16.461,13.344,29.805,29.804,29.805c16.461,0,29.805-13.344,29.805-29.805
-									C118.005-623.802,104.662-637.145,88.201-637.145 M88.201-590.783c-9.129,0-16.558-7.428-16.558-16.559
-									c0-3.918,1.37-7.52,3.652-10.356l8.803,13.711l10.449-6.708l-8.392-13.073c0.671-0.083,1.351-0.13,2.043-0.13
-									c9.13,0,16.559,7.428,16.559,16.558C104.759-598.21,97.331-590.783,88.201-590.783"/>
-								<path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M239.761,90.542h-1.176c-1.576-8.777-4.898-16.248-6.265-17.942
-									c-1.246-1.548-3.038-2.559-5.007-2.82l-35.738-28.65c0,0-10.268-25.724-26.242-25.724L82.838,15.4
-									c-2.501,0-60.647,0.059-60.647,0.059c-0.855,0.272-7.646,3.201-8.344,7.377c-1.845,11.043-3.033,50.814-3.033,53.316v24.727
-									c0,4.267,3.459,7.727,7.727,7.727h20.67c3.87,10.206,13.745,17.483,25.292,17.483s21.422-7.276,25.292-17.483h74.462
-									c3.872,10.206,13.746,17.483,25.293,17.483s21.422-7.276,25.292-17.483l24.922-0.015c1.421,0,2.569-1.15,2.569-2.57V93.114
-									C242.331,91.692,241.182,90.542,239.761,90.542z M64.501,109.347c-5.681,0-10.303-4.622-10.303-10.303
-									c0-5.682,4.622-10.304,10.303-10.304c5.682,0,10.303,4.622,10.303,10.304C74.803,104.725,70.182,109.347,64.501,109.347z
-									 M189.549,109.347c-5.682,0-10.304-4.622-10.304-10.303c0-5.682,4.622-10.304,10.304-10.304c5.681,0,10.303,4.622,10.303,10.304
-									C199.851,104.725,195.229,109.347,189.549,109.347z"/>
-							</svg>
-							<div class="type_text_under">550 RSD</div>
-						</div>
-					</label>
-				</div>
-			</div>
-		</div>
+    <form action="{% url 'order' %}" method="post" class="form-horizontal" id="frm">
+        <div class="wash_holder" id="wash_holder_id"><span>
+            <!-- Car type buttons -->
+            <div class="wash"  id="type"><span>&Zcaron;elim da operem <span class="label-filler" id="type-fill"></span></span><br/>
+                <div class="container">
+                    <div class="row row-centered">
+                        <input type="radio" id="type-radio1" name="vehicle_type" value="1"/>
+                        <label for="type-radio1" class="col-xs-4 col-md-4 vehicle-button">
+                            <div class="type_button">
+                                <div class="type_text">Motor</div>
+                                <svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     width="205.721px" height="127.973px" viewBox="12.72 0 205.721 127.973" enable-background="new 12.72 0 205.721 127.973"
+                                     xml:space="preserve" stroke-width="1.5%">
+                                    <path fill="none" d="M-44.196-172.16c-16.46,0-29.805,13.346-29.805,29.806c0,16.461,13.346,29.807,29.805,29.807
+                                        c16.461,0,29.804-13.346,29.804-29.807S-27.736-172.16-44.196-172.16 M-44.196-125.798c-9.131,0-16.56-7.43-16.56-16.562
+                                        s7.429-16.56,16.56-16.56c9.13,0,16.558,7.428,16.558,16.56C-27.638-133.225-35.066-125.798-44.196-125.798"/>
+                                    <path fill="none" d="M77.072-172.16c-3.363,0-6.593,0.566-9.608,1.595l-8.196-12.771c1.765-1.299,3.569-2.471,5.371-3.415v-14.66
+                                        l-13.166,5.936L39.26-214.499L15.398-214.5l-4.384,3.648l20.016,6.521l8.995,14.014l-23.748,11.12L-6.942-194.51l-37.254-5.938
+                                        v9.521l27.371,20.973l16.945,35.188h32.864l8.489-30.839c0,0,3.416-4.419,8.361-9.433l6.959,10.839
+                                        c-5.858,5.442-9.528,13.211-9.528,21.839c0,16.461,13.344,29.805,29.804,29.805c16.463,0,29.807-13.344,29.807-29.805
+                                        C106.876-158.817,93.533-172.16,77.072-172.16 M77.072-125.798c-9.129,0-16.558-7.43-16.558-16.562
+                                        c0-3.918,1.369-7.521,3.651-10.354l8.803,13.711l10.449-6.708l-8.393-13.073c0.671-0.083,1.352-0.13,2.043-0.13
+                                        c9.131,0,16.561,7.43,16.561,16.56C93.63-133.225,86.202-125.798,77.072-125.798"/>
+                                    <g>
+                                        <g>
+                                            <path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M54.699,57.422c-16.462,0-29.807,13.346-29.807,29.803
+                                                c0,16.46,13.345,29.808,29.807,29.808c16.459,0,29.803-13.348,29.803-29.808C84.501,70.766,71.158,57.422,54.699,57.422z
+                                                 M54.699,103.782c-9.132,0-16.561-7.431-16.561-16.56c0-9.132,7.429-16.559,16.561-16.559c9.129,0,16.558,7.427,16.558,16.559
+                                                C71.256,96.354,63.828,103.782,54.699,103.782z M175.966,57.422c-3.358,0-6.594,0.563-9.606,1.594l-8.195-12.771
+                                                c1.766-1.301,3.568-2.471,5.371-3.416v-14.66l-13.166,5.938l-12.213-19.021h-23.861l-4.383,3.648l20.017,6.519l8.993,14.014
+                                                L115.173,50.39L91.955,35.077L54.7,29.141v9.521l27.372,20.973L99.017,94.82h32.862l8.49-30.839c0,0,3.416-4.418,8.358-9.433
+                                                l6.959,10.841c-5.856,5.44-9.526,13.209-9.526,21.835c0,16.46,13.344,29.806,29.805,29.806c16.464,0,29.81-13.346,29.81-29.806
+                                                C205.772,70.764,192.429,57.422,175.966,57.422z M175.966,103.782c-9.129,0-16.559-7.431-16.559-16.56
+                                                c0-3.917,1.368-7.521,3.651-10.354l8.803,13.71l10.451-6.708L173.918,70.8c0.67-0.084,1.354-0.131,2.043-0.131
+                                                c9.129,0,16.563,7.429,16.563,16.559C192.526,96.356,185.097,103.782,175.966,103.782z"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <div class="type_text_under">300 RSD</div>
+                            </div>
+                        </label>
+                        <input type="radio" id="type-radio2" name="vehicle_type" value="2"/>
+                        <label for="type-radio2" class="col-xs-4 col-md-4 vehicle-button">
+                            <div class="type_button">
+                                <div class="type_text">Auto</div>
+                                <svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     width="263.76px" height="123.344px" viewBox="0 0 263.76 123.344" enable-background="new 0 0 263.76 123.344"
+                                     xml:space="preserve" stroke-width="1.5%">
+                                    <path fill="none" d="M-33.067-637.145c-16.46,0-29.806,13.346-29.806,29.806c0,16.461,13.347,29.805,29.806,29.805
+                                        c16.461,0,29.804-13.344,29.804-29.805S-16.607-637.145-33.067-637.145 M-33.067-590.783c-9.13,0-16.561-7.428-16.561-16.559
+                                        c0-9.132,7.431-16.562,16.561-16.562s16.558,7.428,16.558,16.562C-16.509-598.21-23.937-590.783-33.067-590.783"/>
+                                    <path fill="none" d="M88.201-637.145c-3.364,0-6.593,0.566-9.609,1.595l-8.195-12.771c1.765-1.299,3.568-2.469,5.371-3.415v-14.66
+                                        L62.6-660.463l-12.211-19.021l-23.862-0.001l-4.384,3.65l20.016,6.519l8.995,14.014L27.406-644.18L4.187-659.498l-37.254-5.937
+                                        v9.521l27.372,20.973l16.944,35.19h32.865l8.489-30.839c0,0,3.416-4.419,8.36-9.433l6.959,10.841
+                                        c-5.857,5.438-9.527,13.209-9.527,21.837c0,16.461,13.344,29.805,29.804,29.805c16.461,0,29.805-13.344,29.805-29.805
+                                        C118.005-623.802,104.662-637.145,88.201-637.145 M88.201-590.783c-9.129,0-16.558-7.428-16.558-16.559
+                                        c0-3.918,1.37-7.521,3.65-10.356l8.805,13.711l10.447-6.708l-8.392-13.073c0.671-0.083,1.351-0.13,2.043-0.13
+                                        c9.13,0,16.559,7.428,16.559,16.56C104.759-598.21,97.331-590.783,88.201-590.783"/>
+                                    <path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M246.761,76.542h-1.178c-1.576-8.776-4.896-16.248-6.265-17.942
+                                        c-1.246-1.547-3.038-2.559-5.008-2.817l-47.737-8.65c0,0-26.935-25.723-42.909-25.723l-53.83-0.009
+                                        c-10.437,0-19.156,7.952-29.258,17.16C55.82,42.9,50.566,47.675,44.771,51.922l-21.581,2.87c-3.118,0.995-5.377,3.913-5.377,7.357
+                                        v24.729c0,4.268,3.459,7.727,7.727,7.727h20.67c3.871,10.207,13.745,17.483,25.292,17.483s21.422-7.276,25.292-17.483h74.463
+                                        c3.87,10.207,13.744,17.483,25.292,17.483c11.549,0,21.424-7.276,25.292-17.483l24.925-0.015c1.42,0,2.566-1.149,2.566-2.569V79.115
+                                        C249.331,77.691,248.183,76.542,246.761,76.542z M71.5,95.348c-5.68,0-10.302-4.623-10.302-10.304
+                                        c0-5.684,4.622-10.304,10.302-10.304c5.684,0,10.306,4.62,10.306,10.304C81.803,90.725,77.182,95.348,71.5,95.348z M196.549,95.348
+                                        c-5.682,0-10.304-4.623-10.304-10.304c0-5.684,4.622-10.304,10.304-10.304c5.684,0,10.305,4.62,10.305,10.304
+                                        C206.851,90.725,202.229,95.348,196.549,95.348z"/>
+                                </svg>
+                                <div class="type_text_under">400 RSD</div>
+                            </div>
+                        </label>
+                        <input type="radio" id="type-radio3" name="vehicle_type" value="3"/>
+                        <label for="type-radio3" class="col-xs-4 col-md-4 vehicle-button">
+                            <div class="type_button">
+                                <div class="type_text">Kamion</div>
+                                <svg class="type_img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     width="251.445px" height="137.14px" viewBox="0 0 251.445 137.14" enable-background="new 0 0 251.445 137.14"
+                                     xml:space="preserve" stroke-width="1.5%">
+                                    <path fill="none" d="M-33.067-637.145c-16.46,0-29.804,13.344-29.804,29.804c0,16.461,13.345,29.805,29.804,29.805
+                                        c16.461,0,29.804-13.344,29.804-29.805C-3.263-623.802-16.607-637.145-33.067-637.145 M-33.067-590.783
+                                        c-9.13,0-16.559-7.428-16.559-16.559c0-9.13,7.429-16.558,16.559-16.558s16.558,7.428,16.558,16.558
+                                        C-16.509-598.21-23.937-590.783-33.067-590.783"/>
+                                    <path fill="none" d="M88.201-637.145c-3.364,0-6.593,0.566-9.609,1.593l-8.197-12.77c1.765-1.299,3.57-2.469,5.371-3.415v-14.66
+                                        L62.6-660.463l-12.211-19.021l-23.862-0.001l-4.384,3.65l20.016,6.519l8.995,14.012l-23.748,11.122L4.187-659.498l-37.254-5.935
+                                        v9.521l27.372,20.973l16.945,35.189h32.865l8.489-30.839c0,0,3.416-4.419,8.362-9.431l6.959,10.839
+                                        c-5.859,5.442-9.529,13.209-9.529,21.837c0,16.461,13.344,29.805,29.804,29.805c16.461,0,29.805-13.344,29.805-29.805
+                                        C118.005-623.802,104.662-637.145,88.201-637.145 M88.201-590.783c-9.129,0-16.558-7.428-16.558-16.559
+                                        c0-3.918,1.37-7.52,3.652-10.356l8.803,13.711l10.449-6.708l-8.392-13.073c0.671-0.083,1.351-0.13,2.043-0.13
+                                        c9.13,0,16.559,7.428,16.559,16.558C104.759-598.21,97.331-590.783,88.201-590.783"/>
+                                    <path class="type_button_stroke" fill="none" stroke="#DC1A8C" stroke-miterlimit="10" d="M239.761,90.542h-1.176c-1.576-8.777-4.898-16.248-6.265-17.942
+                                        c-1.246-1.548-3.038-2.559-5.007-2.82l-35.738-28.65c0,0-10.268-25.724-26.242-25.724L82.838,15.4
+                                        c-2.501,0-60.647,0.059-60.647,0.059c-0.855,0.272-7.646,3.201-8.344,7.377c-1.845,11.043-3.033,50.814-3.033,53.316v24.727
+                                        c0,4.267,3.459,7.727,7.727,7.727h20.67c3.87,10.206,13.745,17.483,25.292,17.483s21.422-7.276,25.292-17.483h74.462
+                                        c3.872,10.206,13.746,17.483,25.293,17.483s21.422-7.276,25.292-17.483l24.922-0.015c1.421,0,2.569-1.15,2.569-2.57V93.114
+                                        C242.331,91.692,241.182,90.542,239.761,90.542z M64.501,109.347c-5.681,0-10.303-4.622-10.303-10.303
+                                        c0-5.682,4.622-10.304,10.303-10.304c5.682,0,10.303,4.622,10.303,10.304C74.803,104.725,70.182,109.347,64.501,109.347z
+                                         M189.549,109.347c-5.682,0-10.304-4.622-10.304-10.303c0-5.682,4.622-10.304,10.304-10.304c5.681,0,10.303,4.622,10.303,10.304
+                                        C199.851,104.725,195.229,109.347,189.549,109.347z"/>
+                                </svg>
+                                <div class="type_text_under">550 RSD</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-		<!-- Order time buttons -->
-		<div hidden class="wash" id="time"><span>U roku od <span class="label-filler" id="time-fill"></span></span><br/>
-            <img id="clock" src="{% static 'clock.png' %}" /><br/>
-			<div class="container">
-				<div class="row row-centered">
-					<input type="radio" id="time-radio1" name="priority"/>
-					<label for="time-radio1" class="col-xs-4 col-md-4" id="time1">
-						<div class="time_button enabled">30 minuta</div>
-					</label>
-					<input type="radio" id="time-radio2" name="priority"/>
-					<label for="time-radio2" class="col-xs-4 col-md-4" id="time2">
-						<div class="time_button enabled">3 sata</div>
-					</label>
-					<input type="radio" id="time-radio3" name="priority" disabled/>
-					<label for="time-radio3" class="col-xs-4 col-md-4">
-						<div class="time_button disabled">Ovih dana</div>
-					</label>
-				</div>
-			</div>
-		</div>
+            <!-- Order time buttons -->
+            <div hidden class="wash" id="time">
+                <span>U roku od <span class="label-filler" id="time-fill"></span></span><br/>
+                <img id="clock" src="{% static 'clock.png' %}" /><br/>
+                <div class="container">
+                    <div class="row row-centered">
+                        <input type="radio" id="time-radio1" name="priority" value="1"/>
+                        <label for="time-radio1" class="col-xs-4 col-md-4" id="time1">
+                            <div class="time_button enabled">30 minuta</div>
+                        </label>
+                        <input type="radio" id="time-radio2" name="priority" value="2"/>
+                        <label for="time-radio2" class="col-xs-4 col-md-4" id="time2">
+                            <div class="time_button enabled">3 sata</div>
+                        </label>
+                        <input type="radio" id="time-radio3" name="priority" value="3" disabled/>
+                        <label for="time-radio3" class="col-xs-4 col-md-4">
+                            <div class="time_button disabled">Ovih dana</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Payment radio buttons -->
-		<div hidden class="wash" id="pay"><span>I platim <span class="label-filler" id="pay-fill"></span></span><br/>
-            <img id="number" src="{% static 'number.png' %}" /><br/>
-			<div class="container">
-				<div class="row row-centered">
-					<input type="radio" id="pay-radio1" name="payment"/>
-					<label for="pay-radio1" class="col-xs-4 col-md-4" id="cash">
-						<div class="pay_button enabled">Ke&scaron;</div>
-					</label>
-					<input type="radio" id="pay-radio2" name="payment" disabled/>
-					<label for="pay-radio2" class="col-xs-4 col-md-4">
-						<div class="pay_button disabled">Kartica</div>
-					</label>
-					<input type="radio" id="pay-radio3" name="payment" disabled/>
-					<label for="pay-radio3" class="col-xs-4 col-md-4">
-						<div class="pay_button disabled">Online</div>
-					</label>
-				</div>
-			</div>
-		</div>
+            <!-- Payment radio buttons -->
+            <div hidden class="wash" id="pay"><span>I platim <span class="label-filler" id="pay-fill"></span></span><br/>
+                <img id="number" src="{% static 'number.png' %}" /><br/>
+                <div class="container">
+                    <div class="row row-centered">
+                        <input type="radio" id="pay-radio1" name="payment" value="1"/>
+                        <label for="pay-radio1" class="col-xs-4 col-md-4" id="cash">
+                            <div class="pay_button enabled">Ke&scaron;</div>
+                        </label>
+                        <input type="radio" id="pay-radio2" name="payment" value="2" disabled/>
+                        <label for="pay-radio2" class="col-xs-4 col-md-4">
+                            <div class="pay_button disabled">Kartica</div>
+                        </label>
+                        <input type="radio" id="pay-radio3" name="payment" value="3" disabled/>
+                        <label for="pay-radio3" class="col-xs-4 col-md-4">
+                            <div class="pay_button disabled">Online</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </span></div>
+
+        <div class="info_holder" id="info_holder_id"><span>
+            <div class="info"><span>
+                <div class="info_back" id="info_back"><span></span></div>
+
+                <!-- Inputs -->
+                <div hidden class="input_container" id="inputs">
+                    <div class="container">
+
+                        <!-- Registration input -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <input type="text" class="form-control input-lg sharp" id="plates" name="licence_plate" placeholder="Registracija">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Color picker menu -->
+                        <div class="form-group form-inline">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <div class="color_label">
+                                        <label class="color_label_text" for="color_holder" >Boja vozila</label>
+                                    </div>
+                                    <div class="color_holder" id="color_holder">
+                                        <input type="radio" id="color-radio1" name="color" value="white"/>
+                                        <label for="color-radio1">
+                                            <div class="color color1"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio2" name="color" value="red"/>
+                                        <label for="color-radio2">
+                                            <div class="color color2"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio3" name="color" value="ForestGreen"/>
+                                        <label for="color-radio3">
+                                            <div class="color color3"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio4" name="color" value="blue"/>
+                                        <label for="color-radio4">
+                                            <div class="color color4"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio5" name="color" value="black"/>
+                                        <label for="color-radio5">
+                                            <div class="color color5"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio6" name="color" value="LightGray"/>
+                                        <label for="color-radio6">
+                                            <div class="color color6"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio7" name="color" value="DimGrey"/>
+                                        <label for="color-radio7">
+                                            <div class="color color7"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio8" name="color" value="GoldenRod"/>
+                                        <label for="color-radio8">
+                                            <div class="color color8"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio9" name="color" value="Yellow"/>
+                                        <label for="color-radio9">
+                                            <div class="color color9"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio10" name="color" value="LimeGreen"/>
+                                        <label for="color-radio10">
+                                            <div class="color color10"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio11" name="color" value="DarkViolet"/>
+                                        <label for="color-radio11">
+                                            <div class="color color11"></div>
+                                        </label>
+                                        <input type="radio" id="color-radio12" name="color" value="Aquamarine"/>
+                                        <label for="color-radio12">
+                                            <div class="color color12"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Telephone number input -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <input type="text" class="form-control input-lg sharp" id="phone" name="phone_number" placeholder="Broj telefona">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- City input -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <select class="form-control input-lg sharp" id="city" name="city">
+                                        <option value="" disabled>Grad</option>
+                                        <option value="1" selected>Novi Sad</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Street name input -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <input type="text" class="form-control input-lg sharp" id="street" name="address" placeholder="Ulica">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apartment number input -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-4">
+                                    <input type="text" class="form-control input-lg sharp" id="street_number" name="building_number" placeholder="Broj zgrade">
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-md-2">
+                                    <input type="text" class="form-control input-lg sharp" id="app_num" name="apartment_number" placeholder="Broj stana">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Racun -->
+                        <div class="receipt_holder_xs visible-xs-block visible-sm-block" id="receipt_holder_xs">
+                            <div class="receipt_xs" id="receipt_xs">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-3 col-sm-3 col-md-3 receipt_container_xs" id="rc_1_xs">
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <h1 id="rc_2_xs">Ra&ccaron;un</h1>
+                                                </div>
+                                                <table class="table table-hover" id="rc_3_xs">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Usluga</th>
+                                                        <th class="text-right">Cena</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="col-md-8"><em>Pranje - <span class="label-filler" id="type-fill_rc_xs"></span></em></td>
+                                                        <td class="col-md-4 text-right"><span class="label-filler" id="type-fill_rc_cost_xs"></span> RSD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-8"><em>U roku od <span class="label-filler" id="time-fill_rc_xs"></span></em></td>
+                                                        <td class="col-md-4 text-right"><span class="label-filler" id="time-fill_rc_cost_xs"></span> RSD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-4 text-right" id="rc_4_xs"><h4><strong>Ukupno: </strong></h4></td>
+                                                        <td class="col-md-8 text-right text-danger" id="rc_5_xs"><h4><strong><span class="label-filler" id="total_rc_cost_xs"></span> RSD</strong></h4></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Racun za desktop i tablete -->
+                        <div hidden class="receipt_holder visible-md-block visible-lg-block" id="receipt_holder">
+                            <div hidden class="receipt" id="receipt">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-3 col-sm-3 col-md-3 receipt_container" id="rc_1">
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <h1 id="rc_2">Ra&ccaron;un</h1>
+                                                </div>
+                                                <table class="table table-hover" id="rc_3">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Usluga</th>
+                                                        <th class="text-right">Cena</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="col-md-8"><em>Pranje - <span class="label-filler" id="type-fill_rc"></span></em></td>
+                                                        <td class="col-md-4 text-right"><span class="label-filler" id="type-fill_rc_cost"></span> RSD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-8"><em>U roku od <span class="label-filler" id="time-fill_rc"></span></em></td>
+                                                        <td class="col-md-4 text-right"><span class="label-filler" id="time-fill_rc_cost"></span> RSD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-4 text-right" id="rc_4"><h4><strong>Ukupno: </strong></h4></td>
+                                                        <td class="col-md-8 text-right text-danger" id="rc_5"><h4><strong><span class="label-filler" id="total_rc_cost"></span> RSD</strong></h4></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Order button -->
+                        <div class="form-group">
+                            <div class="row row-centered">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                                    <div>
+                                        <button class="btn btn-lg btn-custom sharp visible-md-block visible-lg-block" type="submit" id="register" data-trigger="hover"
+                                                data-placement="right" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja" onclick="validate()">
+                                            <span class="btn_text">Naru&ccaron;i</span>
+                                        </button>
+                                        <!--<a class="btn btn-lg btn-custom sharp visible-xs-block visible-sm-block" type="submit" id="register" data-trigger="hover"
+                                            data-placement="top" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja" onclick="validate()">
+                                            <span class="btn_text">Naru&ccaron;i</span>
+                                        </a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </span></div>
 	</span></div>
-
-	<div class="info_holder" id="info_holder_id"><span>
-		<div class="info"><span>
-			<div class="info_back" id="info_back"><span></span></div>
-
-			<!-- Inputs -->
-			<div hidden class="input_container" id="inputs">
-				<div class="container">
-					<form action="{% url 'order' %}" method="post" class="form-horizontal" id="frm">
-
-						<!-- Registration input -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<input type="text" class="form-control input-lg sharp" id="plates" name="licence_plate" placeholder="Registracija">
-								</div>
-							</div>
-						</div>
-
-						<!-- Color picker menu -->
-						<div class="form-group form-inline">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<div class="color_label">
-										<label class="color_label_text" for="color_holder" >Boja vozila</label>
-									</div>
-									<div class="color_holder" id="color_holder">
-										<input type="radio" id="color-radio1" name="color" value="white"/>
-										<label for="color-radio1">
-											<div class="color color1"></div>
-										</label>
-										<input type="radio" id="color-radio2" name="color" value="red"/>
-										<label for="color-radio2">
-											<div class="color color2"></div>
-										</label>
-										<input type="radio" id="color-radio3" name="color" value="ForestGreen"/>
-										<label for="color-radio3">
-											<div class="color color3"></div>
-										</label>
-										<input type="radio" id="color-radio4" name="color" value="blue"/>
-										<label for="color-radio4">
-											<div class="color color4"></div>
-										</label>
-										<input type="radio" id="color-radio5" name="color" value="black"/>
-										<label for="color-radio5">
-											<div class="color color5"></div>
-										</label>
-										<input type="radio" id="color-radio6" name="color" value="LightGray"/>
-										<label for="color-radio6">
-											<div class="color color6"></div>
-										</label>
-										<input type="radio" id="color-radio7" name="color" value="DimGrey"/>
-										<label for="color-radio7">
-											<div class="color color7"></div>
-										</label>
-										<input type="radio" id="color-radio8" name="color" value="GoldenRod"/>
-										<label for="color-radio8">
-											<div class="color color8"></div>
-										</label>
-										<input type="radio" id="color-radio9" name="color" value="Yellow"/>
-										<label for="color-radio9">
-											<div class="color color9"></div>
-										</label>
-										<input type="radio" id="color-radio10" name="color" value="LimeGreen"/>
-										<label for="color-radio10">
-											<div class="color color10"></div>
-										</label>
-										<input type="radio" id="color-radio11" name="color" value="DarkViolet"/>
-										<label for="color-radio11">
-											<div class="color color11"></div>
-										</label>
-										<input type="radio" id="color-radio12" name="color" value="Aquamarine"/>
-										<label for="color-radio12">
-											<div class="color color12"></div>
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Telephone number input -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<input type="text" class="form-control input-lg sharp" id="phone" name="phone_number" placeholder="Broj telefona">
-								</div>
-							</div>
-						</div>
-
-						<!-- City input -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<select class="form-control input-lg sharp" id="city" name="city">
-										<option value="" disabled>Grad</option>
-										<option value="Novi Sad" selected>Novi Sad</option>
-									</select>
-								</div>
-							</div>
-						</div>
-
-						<!-- Street name input -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<input type="text" class="form-control input-lg sharp" id="street" name="address" placeholder="Ulica">
-								</div>
-							</div>
-						</div>
-
-						<!-- Apartment number input -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-4">
-									<input type="text" class="form-control input-lg sharp" id="street_number" name="building_number" placeholder="Broj zgrade">
-								</div>
-								<div class="col-xs-6 col-sm-4 col-md-2">
-									<input type="text" class="form-control input-lg sharp" id="app_num" name="apartment_number" placeholder="Broj stana">
-								</div>
-							</div>
-						</div>
-
-						<!-- Racun -->
-						<div class="receipt_holder_xs visible-xs-block visible-sm-block" id="receipt_holder_xs">
-							<div class="receipt_xs" id="receipt_xs">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3 col-sm-3 col-md-3 receipt_container_xs" id="rc_1_xs">
-											<div class="row">
-												<div class="text-center">
-													<h1 id="rc_2_xs">Ra&ccaron;un</h1>
-												</div>
-												<table class="table table-hover" id="rc_3_xs">
-													<thead>
-														<tr>
-															<th>Usluga</th>
-															<th class="text-right">Cena</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td class="col-md-8"><em>Pranje - <span class="label-filler" id="type-fill_rc_xs"></span></em></td>
-															<td class="col-md-4 text-right"><span class="label-filler" id="type-fill_rc_cost_xs"></span> RSD</td>
-														</tr>
-														<tr>
-															<td class="col-md-8"><em>U roku od <span class="label-filler" id="time-fill_rc_xs"></span></em></td>
-															<td class="col-md-4 text-right"><span class="label-filler" id="time-fill_rc_cost_xs"></span> RSD</td>
-														</tr>
-														<tr>
-															<td class="col-md-4 text-right" id="rc_4_xs"><h4><strong>Ukupno: </strong></h4></td>
-															<td class="col-md-8 text-right text-danger" id="rc_5_xs"><h4><strong><span class="label-filler" id="total_rc_cost_xs"></span> RSD</strong></h4></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Racun za desktop i tablete -->
-						<div hidden class="receipt_holder visible-md-block visible-lg-block" id="receipt_holder">
-							<div hidden class="receipt" id="receipt">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3 col-sm-3 col-md-3 receipt_container" id="rc_1">
-											<div class="row">
-												<div class="text-center">
-													<h1 id="rc_2">Ra&ccaron;un</h1>
-												</div>
-												<table class="table table-hover" id="rc_3">
-													<thead>
-														<tr>
-															<th>Usluga</th>
-															<th class="text-right">Cena</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td class="col-md-8"><em>Pranje - <span class="label-filler" id="type-fill_rc"></span></em></td>
-															<td class="col-md-4 text-right"><span class="label-filler" id="type-fill_rc_cost"></span> RSD</td>
-														</tr>
-														<tr>
-															<td class="col-md-8"><em>U roku od <span class="label-filler" id="time-fill_rc"></span></em></td>
-															<td class="col-md-4 text-right"><span class="label-filler" id="time-fill_rc_cost"></span> RSD</td>
-														</tr>
-														<tr>
-															<td class="col-md-4 text-right" id="rc_4"><h4><strong>Ukupno: </strong></h4></td>
-															<td class="col-md-8 text-right text-danger" id="rc_5"><h4><strong><span class="label-filler" id="total_rc_cost"></span> RSD</strong></h4></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Order button -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<div>
-										<button class="btn btn-lg btn-custom sharp visible-md-block visible-lg-block" type="submit" id="register" data-trigger="hover"
-											data-placement="right" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja" onclick="validate()">
-											<span class="btn_text">Naru&ccaron;i</span>
-										</button>
-										<!--<a class="btn btn-lg btn-custom sharp visible-xs-block visible-sm-block" type="submit" id="register" data-trigger="hover"
-											data-placement="top" data-toggle="popover" title="Gre&scaron;ka!" data-content="Molimo Vas da ispunite sva polja" onclick="validate()">
-											<span class="btn_text">Naru&ccaron;i</span>
-										</a>-->
-									</div>
-								</div>
-							</div>
-						</div>
-				  </form>
-				</div>
-			</div>
-		</span></div>
-	</span></div>
+    </form>
 
 	<div class="footer" id="index_footer">
 
