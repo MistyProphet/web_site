@@ -86,7 +86,7 @@ $(document).ready(function() {
 	$('#plates, #phone, #city_select, #street, #street_number, #app_num').bind('keyup', function() {
 		if(allFilled()) 
 		{
-			if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
+			if(typeof $('input[name=color]:checked').val() !== 'undefined')
 			{
 				$('#register').popover('disable')
 			}
@@ -146,7 +146,7 @@ $(document).ready(function() {
                                {
 									if(allFilled()) 
 									{
-										if(typeof $('input[name=color-radio]:checked').val() !== 'undefined')
+										if(typeof $('input[name=color]:checked').val() !== 'undefined')
 										{
 											$('#register').popover('disable')
 										}
