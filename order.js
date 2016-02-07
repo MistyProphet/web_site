@@ -64,7 +64,7 @@ $(document).ready(function() {
 	
 	activate = function() {
 		var filled = true;
-		$('body input').each(function() {
+		$('info_holder input').each(function() {
 			if($(this).val() == '')
 			{	
 				filled = false;
@@ -168,35 +168,35 @@ $(document).ready(function() {
     // Sliding down the new options on click
     $("#type label").click(function() {
         $("#time").slideDown("slow", function() {
-			$('html, body').animate({
-				scrollTop: $("#time").offset().top - ($("#time").height())
-			}, 2000);
+			//$('html, body').animate({
+				//scrollTop: $("#time").offset().top - ($("#time").height())
+			//}, 2000);
 		});
     });
     $("#time #time1").click(function() {
         $("#pay").slideDown("slow", function() {
-			$('html, body').animate({
-				scrollTop: $("#pay").offset().top - ($("#pay").height())
-			}, 2000);
+			//$('html, body').animate({
+				//scrollTop: $("#pay").offset().top - ($("#pay").height())
+			//}, 2000);
 		});
     });
     $("#time #time2").click(function() {
         $("#pay").slideDown("slow", function() {
-			$('html, body').animate({
-				scrollTop: $("#pay").offset().top - ($("#pay").height())
-			}, 2000);
+			//$('html, body').animate({
+				//scrollTop: $("#pay").offset().top - ($("#pay").height())
+			//}, 2000);
 		});
     });
     $("#pay #cash").click(function() {
+		document.getElementById("info_back").style.visibility = "visible";
         $("#inputs").slideDown("slow", function() {
-			document.getElementById("info_back").style.visibility = "visible";
-			$('html, body').animate({
-				scrollTop: $("#inputs").offset().top - ($("#pay").height())
-			}, 2000);
-			$("#receipt_holder").slideDown("slow", function() {
-			});
-			$("#receipt").slideDown("slow", function() {
-			});
+			//$('html, body').animate({
+				//scrollTop: $("#inputs").offset().top - ($("#pay").height())
+			//}, 2000);
+            $("#receipt_holder").slideDown("slow", function() {
+            });
+            $("#receipt").slideDown("slow", function() {
+            });
 		});
     });
 
