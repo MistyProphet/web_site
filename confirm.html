@@ -4,11 +4,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8"> 
 	<title>Wash.rs</title>
-	<link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "style.css" %}">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="order.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 							<span class="icon-bar"></span>                        
 						</button>
 						<div class="navbar-header">
-							<p class="logo"><a href="index.html" id="logo_link">OPERIME.RS</a></p><img src="logo_bubbles.png" alt="" height="42" width="42" class="logo_img">
+                            <p class="logo"><a href="/" id="logo_link">OPERIME.RS</a></p><img src="{% static "logo_bubbles.png" %}" alt="" height="42" width="42" class="logo_img">
 						</div>
 					</div>
 					<div class="navbar-collapse collapse" id="myNavbar">
@@ -46,37 +46,37 @@
 	<div class="wash_holder"><span>
 		
 		<!-- CONFIRM TEXT -->
-		<div class="wash"  id="jobs" name="jobs"><span>POTVRDA</span><br/>
+		<div class="wash"  id="jobs" name="jobs"><span>Vaša porudžbina je potvrđena</span><br/>
 			<div class="container">
 				<div class="row row-centered">
-					<p id="jobs_p">Va&scaron;a narud&zcaron;bina je primljena.<br/>Hvala Vam na ukazanom poverenju.</p>
+					<p id="jobs_p">Perač će uskoro biti na vašoj adresi.<br/>Hvala Vam na ukazanom poverenju.</p>
 				</div>
 			</div>
 		</div>
 
 		<!-- CONFIRM INPUT -->
-		<div class="wash" id="contact" name="contact">
-			<div class="input_container" id="inputs">
-				<div class="container">
-					<div class="form-horizontal">
+		<!--<div class="wash" id="contact" name="contact">-->
+			<!--<div class="input_container" id="inputs">-->
+				<!--<div class="container">-->
+					<!--<div class="form-horizontal">-->
 					
-						<!-- OK button -->
-						<div class="form-group">
-							<div class="row row-centered">
-								<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-									<div>
-										<a class="btn btn-lg btn-custom sharp visible-md-block visible-lg-block" type="submit" id="order_confirm">
-											<span class="btn_text">OK</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						<!--[> OK button <]-->
+						<!--<div class="form-group">-->
+							<!--<div class="row row-centered">-->
+								<!--<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">-->
+									<!--<div>-->
+										<!--<a class="btn btn-lg btn-custom sharp visible-md-block visible-lg-block" type="submit" id="order_confirm">-->
+											<!--<span class="btn_text">OK</span>-->
+										<!--</a>-->
+									<!--</div>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
 						
-					</div>
-				</div>
-			</div>
-		</div>
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 		
 	</span></div>
 
