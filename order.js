@@ -281,9 +281,9 @@ $(document).ready(function() {
         $("#type-fill").text("motor");
         $("#type-fill_rc").text("motor");
         $("#type-fill_rc_xs").text("motor");
-        $("#type-fill_rc_cost").text("300");
-        $("#type-fill_rc_cost_xs").text("300");
-		type = 300;
+        $("#type-fill_rc_cost").text("350");
+        $("#type-fill_rc_cost_xs").text("350");
+		type = 350;
 		total = type + time;
         $("#total_rc_cost").text(total);
         $("#total_rc_cost_xs").text(total);
@@ -303,9 +303,9 @@ $(document).ready(function() {
         $("#type-fill").text("kamion");
         $("#type-fill_rc").text("kamion");
         $("#type-fill_rc_xs").text("kamion");
-        $("#type-fill_rc_cost").text("550");
-        $("#type-fill_rc_cost_xs").text("550");
-		type = 550;
+        $("#type-fill_rc_cost").text("450");
+        $("#type-fill_rc_cost_xs").text("450");
+		type = 450;
 		total = type + time;
         $("#total_rc_cost").text(total);
         $("#total_rc_cost_xs").text(total);
